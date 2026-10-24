@@ -40,6 +40,9 @@ h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid va
 .demo{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--ink)}
 .demo b{color:var(--accent)}
 .demo p{color:var(--sub);font-size:14px;margin:6px 0 0}
+.shelf h3{font-family:Georgia,"Songti SC",serif;font-size:18px;margin:28px 0 10px}
+.shelf .tier-note{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:12px;color:var(--sub);font-weight:400;margin-left:8px}
+.shelf-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
 form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
 label{display:block;font-size:14px;font-weight:600;margin:14px 0 4px}
 input,select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:inherit;background:#fff}
@@ -92,11 +95,26 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:36px 20px;text-a
 </section>
 
 <section id="demo">
-  <h2>先逛一间样例书房</h2>
-  <a class="demo" href="恐龙/index.html">
-    <b>小满的恐龙书房（5 岁）→</b>
-    <p>5 个展区 · 21 天路径 · 30 张冷知识卡 · 20 题家长手册 · 5 本真实书单，另附可打印卡片 PDF。</p>
-  </a>
+  <h2>样例书房架</h2>
+  <p class="sub">三个档位，都能先逛后买。样例即真实交付水准。</p>
+  <div class="shelf">
+    <h3>单间书房 · ¥29 早鸟<span class="tier-note">完整样例，点开即逛</span></h3>
+    <div class="shelf-row">
+      <a class="demo" href="恐龙/index.html"><b>小满的恐龙书房（5 岁）→</b><p>5 个展区 · 21 天路径 · 30 张冷知识卡 · 20 题家长手册 · 5 本真实书单。</p></a>
+      <a class="demo" href="宇宙/index.html"><b>小满的宇宙书房（6 岁）→</b><p>火箭、月亮、星座——从"月亮为什么跟着我"讲到宇宙尺度。</p></a>
+      <a class="demo" href="海洋/index.html"><b>小满的海洋书房（5 岁）→</b><p>鲸鱼、水母、深海——从海洋馆好奇心到整片蓝色世界。</p></a>
+      <a class="demo" href="挖掘机/index.html"><b>朵朵的挖掘机书房（6 岁）→</b><p>真实订单样例：从工地上的大家伙讲到液压与工程思维。</p></a>
+    </div>
+    <h3>迷你书房 · 现场快照<span class="tier-note">约 70 秒生成，下单前的即时体验</span></h3>
+    <div class="shelf-row">
+      <a class="demo" href="mini-挖掘机.html"><b>朵朵的挖掘机（迷你版）→</b><p>一个小问题 + 一张卡 + 一本书，感受完整版的讲稿质量。</p></a>
+      <a class="demo" href="mini-恐龙和挖掘机.html"><b>恐龙和挖掘机（混搭主题）→</b><p>两个着迷的话题也能焊成一间房——霸王龙走进工地。</p></a>
+    </div>
+    <h3>家庭年卡 · ¥199/年<span class="tier-note">每月一间，主题随孩子兴趣换</span></h3>
+    <a class="demo" href="annual.html"><b>年卡书房架（样例）→</b><p>12 个月 12 间书房：已摆上 4 间样例，还有 8 个空位等孩子来定。</p></a>
+    <h3>博主素材订阅 · ¥29/月<span class="tier-note">二期产品 · 样例已出</span></h3>
+    <a class="demo" href="creator.html"><b>知识博主素材周报（样例）→</b><p>10 个带钩子的选题 + 5 张冷知识卡 + 一周发帖日历，科普赛道实样。</p></a>
+  </div>
 </section>
 
 <section id="price">
