@@ -7,7 +7,8 @@
 
 :root{--paper:#f7f2e9;--card:#fffdf8;--ink:#33302a;--sub:#7a7264;--accent:#8c5a3c;--moss:#5f7050;--line:#e4dbc8}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(140,90,60,.05) 1px,transparent 1.4px);background-size:20px 20px;color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 a{color:var(--accent)}
 
 .tip{max-width:860px;margin:24px auto 0;padding:12px 20px;background:#fff6df;border:1px solid #e8d9a8;border-radius:8px;font-size:14px}
@@ -17,7 +18,7 @@ a{color:var(--accent)}
 .pcard h3{margin:10px 0 8px;color:var(--accent);font-size:18px}
 .pcard p{margin:0;font-size:14px;line-height:1.7}
 .pfoot{margin-top:auto!important;padding-top:10px;font-size:10px;color:var(--sub);letter-spacing:.15em}
-@media print{.tip{display:none}body{background:#fff}.board{max-width:none;padding:0;gap:6mm}}
+@media print{.tip{display:none}body{background:#fff;background-image:none}.board{max-width:none;padding:0;gap:6mm}}
 </style>
 </head>
 <body>

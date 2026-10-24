@@ -8,17 +8,24 @@
 
 :root{--paper:#f7f2e9;--card:#fffdf8;--ink:#33302a;--sub:#7a7264;--accent:#8c5a3c;--moss:#5f7050;--line:#e4dbc8}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(140,90,60,.05) 1px,transparent 1.4px);background-size:20px 20px;color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 a{color:var(--accent)}
 
 .hero{max-width:760px;margin:0 auto;padding:64px 20px 24px;text-align:center}
 .brand{color:var(--accent);letter-spacing:.35em;font-size:13px;margin:0}
-h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 10px}
-.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:10px 0 4px}
+h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 8px}
+.made-for{color:var(--sub);font-size:13.5px;letter-spacing:.08em;margin:0}
+.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:12px 0 4px}
 .welcome{color:var(--sub)}
 .chips span{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;margin:4px;font-size:13px;color:var(--moss)}
-nav{position:sticky;top:0;background:rgba(247,242,233,.93);backdrop-filter:blur(4px);text-align:center;padding:10px;border-bottom:1px solid var(--line);z-index:1}
-nav a{color:var(--ink);text-decoration:none;margin:0 9px;font-size:14px}
+nav{position:sticky;top:0;background:rgba(247,242,233,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+.nav-inner{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-brand{font-family:Georgia,"Songti SC",serif;font-weight:700;margin-right:14px;color:var(--accent);font-size:14.5px}
+nav a{color:var(--ink);text-decoration:none;margin:0 8px;font-size:14px;transition:color .15s}
+nav a:hover{color:var(--accent)}
+.nav-home{color:var(--accent)!important;font-weight:600}
+section{scroll-margin-top:64px}
 main{max-width:860px;margin:0 auto;padding:24px 20px}
 section{margin:48px 0}
 h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:6px}
@@ -29,35 +36,45 @@ h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid va
 .map p{margin:0 0 10px;color:var(--sub);font-size:13px}
 .areas span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:2px;font-size:12px;color:var(--sub)}
 ol.path{list-style:none;padding:0}
-.path li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
-.day{color:var(--accent);font-size:12px;letter-spacing:.15em}
+.path li.day-item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0;transition:box-shadow .15s,transform .15s}
+.path li.day-item:hover{box-shadow:0 6px 16px rgba(90,70,40,.12);transform:translateY(-2px)}
+.path .week{background:#f1ead9;border-radius:9px;padding:7px 14px;margin:18px 0 4px;font-size:13px;color:var(--sub);list-style:none}
+.path .week b{color:var(--accent);margin-right:9px;font-family:Georgia,"Songti SC",serif}
+.dayb{display:inline-flex;width:27px;height:27px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-size:12.5px;margin-right:9px;font-family:Georgia,serif;vertical-align:-8px}
 .q{font-weight:600}
 details{margin-top:8px}
-summary{cursor:pointer;color:var(--moss);font-size:14px}
+summary{cursor:pointer;color:var(--moss);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";font-size:15px;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
 .kid{background:#f1ead9;border-radius:8px;padding:10px 14px}
 .parent{color:#4c463c}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;transition:transform .15s,box-shadow .15s}
+.mini:hover{transform:translateY(-3px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
 .mini b{color:var(--accent)}
 .mini p{margin:8px 0 0;font-size:14px}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
-@media print{nav{display:none}}
+@media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
 </head>
 <body>
 <header class="hero">
   <p class="brand">杂学书房 · 定制</p>
   <h1>朵朵的挖掘机书房</h1>
+  <p class="made-for">为 朵朵（6 岁）定制 · 挖掘机主题</p>
   <img class="cover" src="cover.png" alt="书房封面插画">
   <p class="welcome">欢迎朵朵！每天选一个小问题，先看看家附近的挖掘机，再读一读它的秘密，和家人一起边观察边发现吧！</p>
   <div class="chips"><span>每天用一个问题开启聊天</span><span>卡片剪开后边玩边学</span><span>故事书和科普书搭配选</span></div>
 </header>
-<nav>
+<nav><div class="nav-inner">
+  <span class="nav-brand">📚 朵朵的挖掘机书房</span>
   <a href="#map">知识地图</a><a href="#path">21 天路径</a><a href="#cards">冷知识卡</a><a href="#book">书单</a><a href="#manual">家长手册</a>
-</nav>
+  <a class="nav-home" href="../index.html">服务主页 ↗</a>
+</div></nav>
 <main>
   <section id="map"><h2>知识地图</h2><p class="sub">这间书房一共 5 个展区。</p>
     <div class="map-grid"><div class="map"><h3>认识挖机</h3><p>看看挖掘机有哪些身体部件</p>
@@ -72,127 +89,127 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
     <div class="areas"><span>轮式挖机</span><span>履带挖机</span><span>清洁与维修</span><span>燃油与电力</span></div></div></div>
   </section>
   <section id="path"><h2>21 天探索路径</h2><p class="sub">每天一个小问题，晚饭后 5 分钟；点开看讲稿，照着讲就行。</p>
-    <ol class="path"><li><span class="day">第 1 天</span>
+    <ol class="path"><li class="week"><b>第 1 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">1</span>
     <div class="q">挖掘机到底是一辆什么车？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机看起来像一辆车，其实更像“会干活的大机械手”。它的底下有履带，像两条硬硬的橡皮鞋，能在泥土和工地上稳稳走；上面有一个驾驶室，还有长长的动臂、斗杆和铲斗。司机操纵液压装置，让大手臂抬起、伸长、弯下，用铲斗挖土、装土，换上破碎锤还能敲碎石头。它不像小汽车那样载人去旅行，而是专门帮助人们挖地、修路、盖房子。你觉得它最像哪一种动物？</p>
       <p class="parent">严格说，挖掘机不是用来载人载货的普通汽车，而是工程机械。常见的履带式挖掘机由行走装置、回转平台、驾驶室和工作装置组成；工作装置包括动臂、斗杆和铲斗。发动机带动液压泵，液压油推动油缸，让这些部件完成挖掘。上部平台通常能连续回转约360度，所以不用整台掉头，也能把土挖起、转向并卸下；换装破碎锤等工具后，还能处理岩石。你可以这样跟孩子说：挖掘机是用液压力量工作的工程机械，不是普通的小汽车。</p>
     </details></li>
-<li><span class="day">第 2 天</span>
+<li class="day-item"><span class="dayb">2</span>
     <div class="q">铲斗是怎么把土挖起来的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">看！挖掘机的铲斗像一只张开的金属大手，前面还有一排尖尖的斗齿。挖土时，长长的动臂和斗杆先把铲斗送到地面，斗齿压进土里，像小铲子切开蛋糕一样切开泥土。接着，液压油推动里面的“力气筒”，让铲斗向后翻，把土卷进肚子里。挖掘机再抬起手臂，铲斗就能把土送到卡车里。要是没有斗齿，铲斗会更难钻进硬土。你觉得铲斗倒土时，为什么要把肚子朝下翻呢？</p>
       <p class="parent">铲斗的挖掘动作主要由液压系统完成：液压泵把油加压，液压缸伸缩，带动动臂、斗杆和铲斗转动。斗齿把力量集中在较小的接触面积上，便于切入土层；铲斗继续向内翻转，就能克服土的阻力，把土装入斗中。抬臂后再翻斗，土便会卸下。你可以这样跟孩子说：铲斗先用尖尖的斗齿切开土，再像小勺子一样把土卷进肚子里。</p>
     </details></li>
-<li><span class="day">第 3 天</span>
+<li class="day-item"><span class="dayb">3</span>
     <div class="q">修路时挖掘机第一步通常做什么？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">修路可不是一到工地就把铲斗插进土里！挖掘机司机先要听施工员指挥，看看图纸，在地面上量一量、画出路要走的线，还要检查附近有没有电缆、水管和大石头。确认安全后，它通常先用铲斗清掉杂草、垃圾和松软的表土，把地面整理平，再一铲一铲挖路基。就像搭积木前要先看图、清桌面一样，准备好了，路才不会挖歪、挖坏。你觉得铲斗像不像一只会挖土的大勺子？</p>
       <p class="parent">严格说，挖掘机“第一步”没有唯一答案，取决于施工阶段。正式开挖前，施工人员通常先按图纸测量放线，核对高程，确认地下电缆、燃气管和给排水管等，并清除障碍。安全确认后，挖掘机常先剥除杂草、垃圾和松软表土，再开挖路基；若场地已清理，也可能直接按标线挖土。你可以这样跟孩子说：先把路线画好、场地清干净，确认安全后再开始挖。</p>
     </details></li>
-<li><span class="day">第 4 天</span>
+<li class="day-item"><span class="dayb">4</span>
     <div class="q">驾驶员是怎么坐进挖掘机里的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机的驾驶室可不在地面上，像一间架在“大手臂”旁边的小屋。驾驶员先走到机器旁，踩着一级一级的踏板，手扶着栏杆，像爬楼梯一样上去。到了门口，他打开驾驶室的门，转身坐到座椅上，再关好门，系上安全带。这样坐稳后，才能看清前面的铲斗，操纵方向盘、手柄和踏板。下车时也要慢慢踩着踏板下来，不能从高处跳下。你觉得上车时，哪一样东西最能帮助驾驶员保持安全呢？</p>
       <p class="parent">挖掘机驾驶室通常高于地面，驾驶员从机身侧面的登梯或踏步上车，沿扶手到达舱门；不同机型的踏步数量、门的位置会有差别。进入后要坐稳并系好安全带，作业时关好门，离开时使用踏步和扶手，避免跳下。驾驶室位置较高，是为了获得更好的作业视野，也能让驾驶员远离部分机械运动区域，但并不等于绝对安全。你可以这样跟孩子说：“驾驶员要像爬楼梯一样，扶好栏杆，踩着踏步进驾驶室。”</p>
     </details></li>
-<li><span class="day">第 5 天</span>
+<li class="day-item"><span class="dayb">5</span>
     <div class="q">为什么有的挖掘机像汽车一样有轮子？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你见过在马路边工作的挖掘机吗？有些挖掘机脚下不是一条条履带，而是像汽车一样的轮子。因为它们常常要从一个工地开到另一个工地，轮子在平坦的马路上跑得更快，也不容易伤到路面，不用每次都请大卡车来搬家。不过，轮子没有履带那么稳。挖土时，它会放下支腿，像小桌子伸出四条腿，把自己撑牢；遇到泥地、沙地或很陡的地方，履带挖掘机就更有力。你觉得哪一种挖掘机更适合在泥巴里工作呢？</p>
       <p class="parent">轮式挖掘机使用橡胶轮胎，并配有转向、制动等装置，适合在城市道路和较平整的场地之间自行转场，机动性好、对路面扰动较小。履带挖掘机接地面积大，单位压力低，在松软或崎岖地面不易下陷，作业时也更稳定。轮式机因此常用液压支腿或推土铲增加稳定性，但在泥泞、陡坡等环境通常不如履带机。你可以这样跟孩子说：轮子让它跑得快，支腿让它挖得稳。</p>
     </details></li>
-<li><span class="day">第 6 天</span>
+<li class="day-item"><span class="dayb">6</span>
     <div class="q">它为什么叫挖掘机呢？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">因为它最拿手的事情，就是“挖”和“掘”呀！“挖”是把泥土挖开，“掘”也是挖土、挖洞的意思，所以人们把这种机器叫作挖掘机。你看，它前面长着一只像大勺子的铲斗，长长的机械臂一伸、一弯，就能把泥土装进斗里，再倒到旁边。它的身体还能在履带上转来转去，像一只力气特别大的机械手臂。修路、挖地基、清理河道时，它都能帮忙。要是给它起个更有趣的名字，你觉得它像什么动物？</p>
       <p class="parent">“挖掘机”是按主要功能命名的。“挖”与“掘”都有挖土、取土、开挖的意思，合起来就是把土石挖开、取出。它通常用液压系统驱动动臂、斗杆和铲斗；上部机身还能回转，履带或轮胎负责移动。因此它不只是“会挖的车”，还常用于装土、拆除和清理。你可以这样跟孩子说：它因为最会挖土、掘地，所以叫挖掘机。</p>
     </details></li>
-<li><span class="day">第 7 天</span>
+<li class="day-item"><span class="dayb">7</span>
     <div class="q">挖掘机的手臂为什么能抬起来又放下去？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你可以把挖掘机的手臂想成一条很有力的“机械手臂”。驾驶员一推操纵杆，发动机带动液压泵，把液压油压进一根粗粗的液压缸里。油推动里面的活塞，活塞杆就像拉杆一样伸长或缩短，带着手臂绕着关节抬起、放下。阀门像水管开关，决定油往哪边走；想抬起时，油从一边推，想放下时，就换到另一边。手臂本身不长肌肉，却靠油的力量工作。你觉得它更像人的手臂，还是像一把会动的大勺子呢？</p>
       <p class="parent">挖掘机用的是液压传动。发动机带动液压泵，让液压油流动并建立压力；操纵杆控制阀组，改变油液进入液压缸的哪一侧。油压推动缸内活塞，活塞杆伸出或缩回，再通过铰接结构把直线运动变成大臂的转动。液压缸推力很大，适合搬动沉重的铲斗；阀门和安全溢流装置还能控制速度、方向并保护系统。你可以这样跟孩子说：挖掘机用液压油当“肌肉”，推着里面的活塞，让手臂抬起或放下。</p>
     </details></li>
-<li><span class="day">第 8 天</span>
+<li class="week"><b>第 2 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">8</span>
     <div class="q">家附近修路为什么要先挖开地面？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看，马路像一层层铺好的“三明治”：最上面是硬硬的沥青或水泥，下面还有石子、泥土，有时还藏着水管、电线和排水管。修路叔叔先用挖掘机把地面挖开，是为了看看下面、换掉坏掉的管子，或把松软的土压实，再一层层铺上结实材料。要是只在旧路上补一小块，路面下面不牢，车一压，坑坑洼洼又会回来。挖掘机的大铲子就像一把超大的小铲子，先把该挖的地方打开。你猜，马路下面最需要哪一种管子来帮雨水跑掉呢？</p>
       <p class="parent">道路并不是一层沥青，而是由面层、基层和土基组成的结构；不同道路还会铺设排水管、供水管、燃气管或电缆。翻修时先开挖，可能是为了处理破损路基、更新地下管线、改善排水，或为新结构留出厚度。施工前还要查图纸、探测管线并设置防护，不能随意开挖。你可以这样跟孩子说：“马路像分层三明治，修路要把每一层都做好，车子开起来才安全又平稳。”</p>
     </details></li>
-<li><span class="day">第 9 天</span>
+<li class="day-item"><span class="dayb">9</span>
     <div class="q">驾驶室里的两个操纵杆是做什么的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">驾驶室里的两个操纵杆，就像挖掘机的两只“手柄魔法棒”。通常，左边操纵杆负责让上面的工作装置左右转、让大臂抬起或放下；右边操纵杆负责让小臂伸出去、收回来，还能让铲斗张嘴、合上。驾驶员轻轻推、拉或向旁边拨，挖掘机就会慢慢做出对应动作；不同型号的安排可能会有一点不同。要是你来开，你最想先让铲斗做什么呢？</p>
       <p class="parent">多数挖掘机采用 ISO 操纵方式：左操纵杆控制回转（左右转）和动臂（大臂）升降；右操纵杆控制斗杆（小臂）伸缩和铲斗翻转。操纵杆并不是直接“推着”机器运动，而是发出液压或电子控制信号，让阀门分配液压油。不同机型可能采用 SAE 方式或可切换设置，驾驶员会先确认。你可以这样跟孩子说：“两个杆就像在指挥挖掘机的手臂和手掌。”</p>
     </details></li>
-<li><span class="day">第 10 天</span>
+<li class="day-item"><span class="dayb">10</span>
     <div class="q">为什么有的挖掘机不装轮子而装履带？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象你穿着细底小鞋走沙滩，脚一沉，容易陷进去；换上宽宽的雪地靴，就能稳稳走过去。挖掘机也有类似的烦恼。履带像两条很长、很宽的“钢铁鞋底”，把挖掘机的重量分散到更大的地面上，所以在泥地、沙地和坑坑洼洼的工地上，不容易下陷，还能抓住地面往前走。它还能原地转弯：一边履带快一点，另一边慢一点，机器就转起来了。不过在平整马路上，轮子通常跑得更快、更安静。你觉得挖泥巴时，穿鞋底宽的鞋子是不是更合适呢？</p>
       <p class="parent">履带由许多块履板连接成环，接地面积通常比轮胎大，因此同样重量下，对地面的压力更小，能减少下陷，并在松软、崎岖地面提供更强的牵引力。挖掘机工作时还要承受铲斗挖掘和回转带来的冲击，履带能让整机更稳。代价是速度较慢、转向磨损和运输不便；轮式挖掘机则更适合硬路面和频繁开到不同地点。你可以这样跟孩子说：履带就像宽大的鞋底，让挖掘机在泥地上站得稳、走得动。</p>
     </details></li>
-<li><span class="day">第 11 天</span>
+<li class="day-item"><span class="dayb">11</span>
     <div class="q">挖掘机的驾驶室在哪里？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机的驾驶室，就像它的“小脑袋”，也像一间小房子，通常在车身的前上方，靠着长长的挖掘臂。驾驶员坐在里面，透过前面和侧面的玻璃，看清地面、铲斗和周围的人，再用手柄和脚踏板指挥挖掘臂、铲斗转动。下面一圈一圈的履带，像两条大鞋子，负责走路；驾驶室则是人坐着工作的地方。它还会跟着上面的车身一起转动，让驾驶员能朝不同方向工作。你发现它是不是比汽车驾驶室高？为什么要造得高一些呢？</p>
       <p class="parent">挖掘机的驾驶室位于上车架前部，通常在动臂（大臂）左侧、履带上方。驾驶员通过玻璃观察工地，并用操纵杆控制回转、动臂、斗杆和铲斗；发动机、液压泵等主要部件多在驾驶室后方。驾驶室和上车架能一起绕中央回转机构旋转，而履带负责行走。不同机型的布局会略有差别。你可以这样跟孩子说：驾驶室就在挖掘机的上方前面，是驾驶员观察和指挥挖掘机的地方。</p>
     </details></li>
-<li><span class="day">第 12 天</span>
+<li class="day-item"><span class="dayb">12</span>
     <div class="q">长手臂是怎么伸出去的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机的长手臂，其实藏着几根“液压缸”，像特别有力的金属肌肉。司机一推操纵杆，发动机就带动液压泵，把液压油压得很有劲。油跑进液压缸，推着里面的活塞杆向外伸，手臂就被顶起来、伸出去；换个方向，油从另一边推，活塞杆就缩回，手臂也收回。液压油不是水，而是专门用来传力的油。几节手臂在关节处连着，像你的手肘和手腕，铲斗就能挖土、抬土。你觉得哪一部分最像人的手臂？</p>
       <p class="parent">挖掘机靠液压系统伸臂。发动机驱动液压泵，把液压油送入液压缸；油压作用在活塞上，产生推力，使活塞杆伸缩。动臂、斗杆和铲斗分别由液压缸控制，并通过销轴连接。操纵阀改变油液进入缸体的方向和流量，所以司机能控制动作方向与速度。液压缸本质上是把液压力变成直线运动的执行元件。你可以这样跟孩子说：液压油像看不见的力，把金属肌肉推长，手臂就伸出去了。</p>
     </details></li>
-<li><span class="day">第 13 天</span>
+<li class="day-item"><span class="dayb">13</span>
     <div class="q">挖掘机为什么要挖一条长长的沟？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看到挖掘机挖一条长长的沟，常常不是在“挖宝”，而是在给地下的东西准备一条路。比如，水管、电线、燃气管道，或者排水管，都可以放进沟里，盖上土以后，地面看起来还是平平的。下雨时，沟里的排水管能把水带走；盖房子时，长沟也能帮助做地基。挖掘机的大铲斗像一把会动的大勺子，一铲一铲把土挖出来。工人还会量好深度和方向，不能乱挖，因为地下可能藏着别的管线。你觉得，这条沟最可能是要给谁准备的路呢？</p>
       <p class="parent">长沟通常是“沟槽开挖”，用途主要有三类：埋设给水、排水、燃气等管道，铺设电力或通信电缆，以及修建条形基础。挖掘机按设计的位置、宽度和深度分层挖土；沟壁太深或土质松软时，要放坡或用支护，防止塌方。施工前还要查清地下既有管线，避免挖断。你可以这样跟孩子说：挖掘机是在地下修一条安全的通道，让管子或电线住进去。</p>
     </details></li>
-<li><span class="day">第 14 天</span>
+<li class="day-item"><span class="dayb">14</span>
     <div class="q">挖掘机里的脚踏板控制什么？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">坐进常见的挖掘机驾驶室，你会看到前面有两只脚踏板，它们像两只小脚。踩左边，主要让左边的履带前进或后退；踩右边，控制右边履带。两边一起向前，挖掘机就往前走；一起向后，就往后退；只踩一边，或让两边方向不同，它还能转弯。这样，挖掘机不用方向盘，也能像小坦克一样慢慢移动。挖斗通常由手边的操作杆控制，不是脚踏板。开动前还要确认周围没人哦！你猜，只踩左边向前，挖掘机会怎么走？</p>
       <p class="parent">多数履带式挖掘机有左右两组行走踏板，有些机型把踏板和操纵杆连在一起。左右踏板分别控制左右履带：踩前端前进，踩后端后退；两侧同向同速就直行，速度不同或方向相反就转向。挖斗、动臂和斗杆通常由手柄控制，不是脚踏板。不同机型布局会有差别，操作前要看说明书。你可以这样跟孩子说：两只脚踏板分别管两条履带，挖掘机就能前进、后退和转弯。</p>
     </details></li>
-<li><span class="day">第 15 天</span>
+<li class="week"><b>第 3 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">15</span>
     <div class="q">轮式挖掘机在马路上有什么方便的地方？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象一下，挖掘机要去隔壁街道干活。履带式挖掘机脚下是一条条“钢鞋带”，挖土很稳，却不适合直接在普通马路上跑，常常要用运输车拉过去。轮式挖掘机脚下是大轮胎，可以自己开上路，像一辆特别高大的工作车，转弯、前进都更方便；橡胶轮胎也比较不容易把路面压出深深的痕迹。这样，工地换得近时，它能少一次装车等待，赶快到下一个地方。不过它挖很硬的地面时，通常不如履带机稳，还要遵守道路交通规定。你觉得它最像哪一种会干活的车？</p>
       <p class="parent">轮式挖掘机使用橡胶轮胎和转向系统，能在道路上自行行驶，适合城市道路、沟渠抢修等需要频繁转场的工作。相比履带式挖掘机，它通常移动更快、对铺装路面损伤较小，也省去短距离反复装上运输车的麻烦。但轮胎在松软或崎岖地面上抓地、稳定性较弱；上路仍须符合车辆尺寸、速度和交通管理规定。你可以这样跟孩子说：它像会开上马路的挖土机，换工地更方便。</p>
     </details></li>
-<li><span class="day">第 16 天</span>
+<li class="day-item"><span class="dayb">16</span>
     <div class="q">长长的那条手臂叫什么？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机长长的“手臂”，不是一根铁棍哦，它叫工作装置，主要由两段手臂和一个铲斗组成。靠近驾驶室、像肩膀一样向上抬起来的第一段叫“动臂”；接在后面的、像手肘到手腕的第二段叫“斗杆”，最前面抓土的是铲斗。动臂和斗杆里面都有液压缸，像特别有力的肌肉，能让手臂伸直、弯曲、抬高，还能把土倒进卡车里。下次看到挖掘机时，你能指出哪一段是动臂、哪一段是斗杆吗？</p>
       <p class="parent">严格来说，挖掘机前面的长“手臂”叫工作装置，不能只用一个名称概括。它通常包括动臂、斗杆和铲斗：动臂连接车身，斗杆连接动臂与铲斗，液压缸推动它们运动。日常说“挖掘机机械臂”也没错；如果孩子指的是靠近驾驶室、向上抬的那一段，准确名称是“动臂”。你可以这样跟孩子说：这条长手臂叫工作装置，靠近车身的是动臂，后面的是斗杆，最前面是铲斗。</p>
     </details></li>
-<li><span class="day">第 17 天</span>
+<li class="day-item"><span class="dayb">17</span>
     <div class="q">铲斗为什么能张开和收回来？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象一下，挖掘机的铲斗像一只会动的大手：要挖土时，它得张开；要把土装走时，又要收回来。驾驶员一推操纵杆，机器里的液压泵就把液压油用力送进一根“液压缸”。液压缸里面有活塞，油从一边推，活塞就伸出去；油换到另一边推，活塞就缩回来。活塞连着几根结实的连杆，连杆一推一拉，铲斗就跟着转动啦。其实，驾驶员不是直接搬动铲斗，而是在指挥油的力量！你觉得如果油换到活塞另一边，铲斗会不会换个方向动呢？</p>
       <p class="parent">铲斗的开合主要靠液压系统。发动机带动液压泵，把液压油加压；操纵阀决定油进入液压缸的哪一侧。油压推动缸内活塞杆伸出或缩回，活塞杆再通过销轴和连杆改变铲斗角度。液压油几乎不可压缩，所以能传递很大的力，挖掘机才能掀动泥土。不同机型的连杆布局不同，因此“伸出”等于“张开”并不总是成立。你可以这样跟孩子说：“液压油在缸里推来推去，带着连杆，就像强壮的手臂，让铲斗张开或收回。”</p>
     </details></li>
-<li><span class="day">第 18 天</span>
+<li class="day-item"><span class="dayb">18</span>
     <div class="q">地下的水管是怎么放进去的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">水管要去地下“上班”，挖掘机先在地上挖出一条沟，沟底还要铺一层细沙或软土，像给水管铺小床，免得石头硌伤它。工人把一节节管子放进去，接好接口，再做检查，看看会不会漏水。确认没问题后，先把管子两边填实，再一层层盖回泥土，压紧路面。要是马路不方便大挖，也能用定向钻，从小坑里钻到另一个小坑，把管子拉过去。你觉得水管为什么不能直接放在地面上呢？</p>
       <p class="parent">铺设地下水管通常先测量放线，确定位置和深度，再开挖沟槽；沟底要平整，必要时铺砂或细土，减少尖石对管壁的损伤。管段连接后会做压力或严密性检查，确认不渗漏才回填，并分层夯实，避免以后地面下沉。道路、河流等不便开挖处，还可用顶管或水平定向钻穿越。你可以这样跟孩子说：水管先躺进安全的小沟里，检查不漏水，再把泥土一层层盖回去。</p>
     </details></li>
-<li><span class="day">第 19 天</span>
+<li class="day-item"><span class="dayb">19</span>
     <div class="q">驾驶员的座椅为什么可以调高低？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">挖掘机驾驶室里有很多操纵杆和踏板，驾驶员可不能坐得歪歪扭扭。座椅能调高低，就像我们把书桌椅调到合适的高度：个子高的人把座椅调高一点，个子矮的人调低一点。这样，眼睛能看清铲斗和周围的人，手能舒服地够到操纵杆，脚也能稳稳踩住踏板。坐得合适，身体不容易累，工作时也更安全。要是座椅太高或太低，就可能看不全、够不着，甚至误碰控制装置。你觉得，如果你来开挖掘机，会先把座椅调到什么位置呢？</p>
       <p class="parent">挖掘机座椅的高度和前后位置通常可以调节，目的不是“坐得更高看得更远”这么简单，而是让不同身材的驾驶员保持合适的操作姿势。调好后，视线能覆盖铲斗、作业区域和周边环境，手脚能自然够到操纵杆、踏板，身体也有稳定支撑，减少疲劳和误操作。实际调整还要结合靠背、扶手和安全带，启动前确认控制装置在安全状态。你可以这样跟孩子说：座椅调到合适的位置，眼睛看得清，手脚够得到，身体也坐得稳。</p>
     </details></li>
-<li><span class="day">第 20 天</span>
+<li class="day-item"><span class="dayb">20</span>
     <div class="q">履带式挖掘机在泥地里为什么更稳？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象你穿着两只细长的鞋，走进松软的泥地：脚会一下子陷进去，走起来又摇又晃。挖掘机的履带，像两条宽宽的“泥地雪地鞋”，把身体的重量分摊到更大的地面上。同样重的挖掘机，履带碰到泥地的面积比轮子大得多，泥土每一小块承受的力就没那么大，不容易陷下去。履带上一格一格的凸起还会咬住泥巴，帮挖掘机向前走，转弯也更稳。不过，挖掘机停在斜坡上、伸出长长的铲斗时，仍然要小心。你猜，它的履带像哪种鞋子？</p>
       <p class="parent">履带式挖掘机更稳，主要不是因为履带让机器变轻，而是因为它把重量分散到更大的接地面积上。根据“压力＝力÷面积”，同样的重量，接触面积越大，泥地承受的压力越小，机器就不容易下陷。履带的连续结构还能贴合并跨过小坑洼，底部花纹会压入泥土，提供抓地力。不过，稳定不等于不会翻倒；坡度、铲斗位置和地面软硬也很重要。你可以这样跟孩子说：履带像大号雪地鞋，把重量摊开，走泥地就不容易陷下去。</p>
     </details></li>
-<li><span class="day">第 21 天</span>
+<li class="day-item"><span class="dayb">21</span>
     <div class="q">铲斗为什么像一只大勺子？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看挖掘机的铲斗，像不像一只张开嘴的大勺子？它前面敞开，底部和后面弯弯的，挖土时，斗齿先“咔嚓”插进泥土，再往里收，就能把土、沙子或小石头兜住。弯弯的形状还能让东西不容易掉出来；到了要倒土的地方，铲斗一翻，里面的东西就“哗啦”落下。它可不是用来吃饭的勺子，而是挖掘机的“手掌”和“勺子”合体！如果让你设计一个挖掘机铲斗，你会给它装上什么特别的“牙齿”呢？</p>

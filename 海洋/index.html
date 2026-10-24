@@ -8,17 +8,24 @@
 
 :root{--paper:#f7f2e9;--card:#fffdf8;--ink:#33302a;--sub:#7a7264;--accent:#8c5a3c;--moss:#5f7050;--line:#e4dbc8}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(140,90,60,.05) 1px,transparent 1.4px);background-size:20px 20px;color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 a{color:var(--accent)}
 
 .hero{max-width:760px;margin:0 auto;padding:64px 20px 24px;text-align:center}
 .brand{color:var(--accent);letter-spacing:.35em;font-size:13px;margin:0}
-h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 10px}
-.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:10px 0 4px}
+h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 8px}
+.made-for{color:var(--sub);font-size:13.5px;letter-spacing:.08em;margin:0}
+.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:12px 0 4px}
 .welcome{color:var(--sub)}
 .chips span{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;margin:4px;font-size:13px;color:var(--moss)}
-nav{position:sticky;top:0;background:rgba(247,242,233,.93);backdrop-filter:blur(4px);text-align:center;padding:10px;border-bottom:1px solid var(--line);z-index:1}
-nav a{color:var(--ink);text-decoration:none;margin:0 9px;font-size:14px}
+nav{position:sticky;top:0;background:rgba(247,242,233,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+.nav-inner{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-brand{font-family:Georgia,"Songti SC",serif;font-weight:700;margin-right:14px;color:var(--accent);font-size:14.5px}
+nav a{color:var(--ink);text-decoration:none;margin:0 8px;font-size:14px;transition:color .15s}
+nav a:hover{color:var(--accent)}
+.nav-home{color:var(--accent)!important;font-weight:600}
+section{scroll-margin-top:64px}
 main{max-width:860px;margin:0 auto;padding:24px 20px}
 section{margin:48px 0}
 h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:6px}
@@ -29,35 +36,45 @@ h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid va
 .map p{margin:0 0 10px;color:var(--sub);font-size:13px}
 .areas span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:2px;font-size:12px;color:var(--sub)}
 ol.path{list-style:none;padding:0}
-.path li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
-.day{color:var(--accent);font-size:12px;letter-spacing:.15em}
+.path li.day-item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0;transition:box-shadow .15s,transform .15s}
+.path li.day-item:hover{box-shadow:0 6px 16px rgba(90,70,40,.12);transform:translateY(-2px)}
+.path .week{background:#f1ead9;border-radius:9px;padding:7px 14px;margin:18px 0 4px;font-size:13px;color:var(--sub);list-style:none}
+.path .week b{color:var(--accent);margin-right:9px;font-family:Georgia,"Songti SC",serif}
+.dayb{display:inline-flex;width:27px;height:27px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-size:12.5px;margin-right:9px;font-family:Georgia,serif;vertical-align:-8px}
 .q{font-weight:600}
 details{margin-top:8px}
-summary{cursor:pointer;color:var(--moss);font-size:14px}
+summary{cursor:pointer;color:var(--moss);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";font-size:15px;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
 .kid{background:#f1ead9;border-radius:8px;padding:10px 14px}
 .parent{color:#4c463c}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;transition:transform .15s,box-shadow .15s}
+.mini:hover{transform:translateY(-3px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
 .mini b{color:var(--accent)}
 .mini p{margin:8px 0 0;font-size:14px}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
-@media print{nav{display:none}}
+@media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
 </head>
 <body>
 <header class="hero">
   <p class="brand">杂学书房 · 定制</p>
   <h1>小满的海洋书房</h1>
+  <p class="made-for">为 小满（5 岁）定制 · 海洋主题</p>
   <img class="cover" src="cover.png" alt="书房封面插画">
   <p class="welcome">欢迎小满！每天选一个问题，先猜一猜，再读一读、想一想，也可以和家长一起画下来，把海洋慢慢装进自己的小脑袋。</p>
   <div class="chips"><span>每天十分钟，先问再听</span><span>卡片打印剪开，随手抽取</span><span>读完画一画，说说新发现</span></div>
 </header>
-<nav>
+<nav><div class="nav-inner">
+  <span class="nav-brand">📚 小满的海洋书房</span>
   <a href="#map">知识地图</a><a href="#path">21 天路径</a><a href="#cards">冷知识卡</a><a href="#book">书单</a><a href="#manual">家长手册</a>
-</nav>
+  <a class="nav-home" href="../index.html">服务主页 ↗</a>
+</div></nav>
 <main>
   <section id="map"><h2>知识地图</h2><p class="sub">这间书房一共 5 个展区。</p>
     <div class="map-grid"><div class="map"><h3>海底地貌</h3><p>看看海水、海浪和海底长什么样</p>
@@ -72,127 +89,127 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
     <div class="areas"><span>海上工作</span><span>海洋探索</span><span>海洋资源</span><span>保护海洋</span></div></div></div>
   </section>
   <section id="path"><h2>21 天探索路径</h2><p class="sub">每天一个小问题，晚饭后 5 分钟；点开看讲稿，照着讲就行。</p>
-    <ol class="path"><li><span class="day">第 1 天</span>
+    <ol class="path"><li class="week"><b>第 1 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">1</span>
     <div class="q">海水为什么是咸的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海水里住着很多看不见的小“盐粒”，所以尝起来咸咸的。雨水落到山上和土地上，会把岩石里很小很小的矿物冲下来，顺着小溪、河流跑进大海；海底的火山和热泉，也会送来一些矿物。太阳把海水变成水蒸气带走了，却把盐留下来，慢慢让海水有了咸味。海水虽然咸，海里的动物可有自己的办法生活。你猜，晒盐时最后留下的是什么？</p>
       <p class="parent">海水的咸味主要来自溶解在水里的盐类，其中最常见的是氯化钠，也就是我们吃的食盐。雨水和土壤、岩石接触时，会溶解少量矿物质；河流把这些离子带入海洋，海底火山和热液活动也会贡献一部分。水分不断蒸发，盐类却留在海里，于是形成咸水。海洋中的沉积、化学反应和生物作用，又会把部分盐带走，所以盐度并不是无限升高。你可以这样跟孩子说：雨水把岩石里的盐带进海里，水蒸发了，盐留下来，所以海水咸咸的。</p>
     </details></li>
-<li><span class="day">第 2 天</span>
+<li class="day-item"><span class="dayb">2</span>
     <div class="q">鱼为什么要住在水里？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看，鱼生活的水里，藏着它们要呼吸的氧气。鱼的两边有鳃，鳃像两把会工作的“小扇子”：水流进来，氧气就从水里跑进鳃，送到鱼的身体里；用过的水再流出去。鱼离开水，鳃会变干，不能好好把氧气拿出来，所以会很难受。水还像鱼的家和大床，托住它的身体，让它游动、找食物、躲危险。鱼儿不是“喜欢泡澡”才住水里，而是身体就是这样设计的。你觉得鱼在水里游泳时，尾巴像不像一把小船桨呢？</p>
       <p class="parent">鱼类主要用鳃呼吸。水从嘴里进入，流过鳃丝；鳃丝表面很薄、血管丰富，能把水中溶解的氧气交换到血液里，再把二氧化碳排回水中。水的浮力也能托住鱼的身体，减少行动负担。离开水后，鳃丝容易粘在一起、变干，气体交换就会变差。不过少数鱼能直接呼吸空气。你可以这样跟孩子说：鱼的鳃能从水里取氧气，所以水就是它的呼吸站和家。</p>
     </details></li>
-<li><span class="day">第 3 天</span>
+<li class="day-item"><span class="dayb">3</span>
     <div class="q">鲸鱼为什么要到海面上换气？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">鲸鱼虽然住在海里，却不是鱼，而是哺乳动物。鱼能用鳃从水里取氧气，鲸鱼没有鳃，只能像我们一样用肺呼吸空气。它每次游到海面，把头顶的呼吸孔露出水面，先“呼——”把肺里用过的空气推出去，再吸进新鲜空气，然后闭好呼吸孔潜下去。你看到的“喷泉”，主要是呼出的暖空气遇到冷空气和水汽形成的雾，不是海水从鼻子里喷出来。小鲸鱼还要跟着妈妈学会这套动作呢！如果你是鲸鱼，浮到海面时会先呼气还是先吸气呢？</p>
       <p class="parent">鲸鱼是哺乳动物，靠肺呼吸，不能像鱼那样用鳃提取溶在水里的氧气，所以必须定期浮上海面。它从头顶的呼吸孔先呼出废气，再吸入空气；呼出的暖湿气体遇到较冷的空气，会凝结成水雾，形成我们看到的“喷水柱”。不同鲸鱼潜水和换气间隔不同，不能一概而论。你可以这样跟孩子说：鲸鱼没有鳃，要到海面用肺吸一口空气。</p>
     </details></li>
-<li><span class="day">第 4 天</span>
+<li class="day-item"><span class="dayb">4</span>
     <div class="q">海风是从哪里吹来的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海风不是从某一条路跑来的，它常常是从海面吹向陆地的风。白天，沙滩和房子被太阳晒热得很快，陆地上方的空气也跟着变热、变轻，像热气球一样往上升。海面升温比较慢，海上的空气还凉凉的，就会从海边赶到陆地，补上空位。我们脸上感到的凉风，就是海风。到了晚上，陆地凉得快，风有时会反过来，从陆地吹向海面，叫陆风。你觉得白天站在海边，海风会把什么味道送到你鼻子里呢？</p>
       <p class="parent">海风通常指白天由海洋吹向陆地的近海风。陆地比海水升温快，地面附近空气受热上升，气压降低；海面上方空气较冷、气压相对较高，于是空气由海面流向陆地，形成海风。夜间陆地降温也更快，气流可能反向，称为陆风。风向还会受季节、天气和海岸形状影响。你可以这样跟孩子说：白天陆地热得快，海上凉空气就来给陆地“补位”，这就是海风。</p>
     </details></li>
-<li><span class="day">第 5 天</span>
+<li class="day-item"><span class="dayb">5</span>
     <div class="q">人们为什么要出海捕鱼？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">大海像一块会晃动的“田地”，里面住着鱼、虾、螃蟹和贝类。靠海生活的人，会坐船到海上，把长大的鱼捞上来，带回家吃，也送到市场，换钱买米、蔬菜和衣服。捕鱼还是一种工作，船长、渔民和卖鱼的人都靠它生活。不过，海里的鱼不是取不完的宝藏，大家要遵守休渔规定，不能把小鱼和太多鱼都捞走，让它们长大、产卵，海洋才会一直有鱼。你觉得渔民出海前，应该准备哪些东西呢？</p>
       <p class="parent">人们出海捕鱼，主要是获取海洋中的野生鱼类等水产品，满足食物需要，也为沿海社区提供工作和收入。鱼类资源可以繁殖，是一种可更新资源，但更新速度有限；如果捕捞超过繁殖速度，就会出现过度捕捞。因此需要设定禁渔期、最小网眼和捕捞量等规则，保护幼鱼和产卵群体。养鱼场的养殖鱼，则不属于出海捕捞。你可以这样跟孩子说：渔民出海，是为了取食物和工作，但也要给小鱼长大的机会。</p>
     </details></li>
-<li><span class="day">第 6 天</span>
+<li class="day-item"><span class="dayb">6</span>
     <div class="q">大海为什么看起来是蓝色的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你有没有发现，晴天的大海像一块蓝蓝的玻璃？其实，太阳光虽然看起来是白色的，里面藏着红、橙、黄、绿、蓝等许多颜色。阳光照进海水后，海水会把红色、橙色这些颜色慢慢“吃掉”一些，却更容易让蓝色在水里散开、弹回来，跑进我们的眼睛。所以我们常常看到蓝色的大海。海水浅、天空有云，或者里面有泥沙和小小的海藻时，颜色也会变。你觉得海水在什么地方会看起来更蓝呢？</p>
       <p class="parent">太阳光是由许多不同颜色的光混在一起的，混在一起看起来接近白色。海水分子会更强地吸收红光、橙光等较长波长的光；蓝光被吸收得少，更容易在水中被散射回到我们的眼睛，因此清澈、较深的海水常呈蓝色。海面也会反射天空，泥沙、浮游生物和水深则会让海水变成青、绿或灰色。你可以这样跟孩子说：“海水会把一些颜色藏起来，让蓝色更容易跑到我们眼睛里。”</p>
     </details></li>
-<li><span class="day">第 7 天</span>
+<li class="day-item"><span class="dayb">7</span>
     <div class="q">鱼是用什么呼吸的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">鱼是用鳃呼吸的，就像我们用鼻子呼吸一样。鱼游动时，会把水含进嘴里，再让水流过鳃。鳃里有许多细细的鳃丝，像一排排小刷子，里面还有很多很细的血管。水里的氧气会跑进血液，血液把氧气送到全身；身体产生的二氧化碳，也会随着水流出去。所以鱼离开水太久，鳃变干了，就很难呼吸。你觉得鱼的鳃像不像藏在头旁边的小小“呼吸门”？</p>
       <p class="parent">鱼主要靠鳃从水中取得溶解氧，而不是直接吸入空气。水从口腔进入，经过鳃丝和鳃片时，氧气穿过薄薄的组织进入鳃丝中的毛细血管，二氧化碳则扩散到水里排出。鳃需要保持湿润，并持续有水流通过；离水后鳃片容易粘连、干燥，气体交换就会变差。少数鱼类还能辅助用空气呼吸，但“鱼用鳃呼吸”是最基本的概念。你可以这样跟孩子说：鱼鳃像水里的小呼吸器，把水中的氧气送进身体。</p>
     </details></li>
-<li><span class="day">第 8 天</span>
+<li class="week"><b>第 2 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">8</span>
     <div class="q">鲸鱼头顶喷出的水柱是什么？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">鲸鱼头顶的“小喷泉”，其实不是它把海水喝进肚子再喷出来啦！鲸鱼要像我们一样呼吸空气，只是它的鼻孔长在头顶，叫“喷水孔”。当它游到水面时，会先用力呼出肺里的空气。这些空气又暖又湿，碰到外面凉凉的空气，就变成一小团小水滴，看起来像水柱。鲸鱼随后再吸一大口空气，潜回海里。不同鲸鱼的喷水形状也不一样，就像每个人吹泡泡的样子不同。你觉得这只鲸鱼的“喷泉”像什么呢？</p>
       <p class="parent">鲸鱼是哺乳动物，用肺呼吸，不能像鱼那样用鳃从海水里取氧。它浮到水面后，通过头顶的喷水孔快速呼气；肺中温暖、含水汽的空气遇到较冷的外界空气，会凝结成许多小水滴，形成我们看到的“水柱”。因此那主要是呼出的气体和凝结水雾，不是从肺里喷出的海水。不同鲸鱼的喷水孔数量和形状也不同。你可以这样跟孩子说：鲸鱼是在用头顶的鼻孔呼吸，暖暖的气息遇到冷空气，才变成小水滴喷出来。</p>
     </details></li>
-<li><span class="day">第 9 天</span>
+<li class="day-item"><span class="dayb">9</span>
     <div class="q">风为什么一吹，海面就起波纹？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象一下，海面是一张蓝色的大毯子。风像一只看不见的小手，轻轻擦过水面。水面上原来有一点点小小的凹凸，风推着它们往前走，水就开始一上一下地动，像我们用手拨动洗脸盆里的水。小波纹碰到旁边的小波纹，会越变越大，排成一队队波浪。风越大、吹得越久，波浪通常也越明显。不过，海水并不是整片一起跑走了，很多水只是在附近上下摇摆，真正向前传过去的是波浪的能量。你觉得如果风停了，波纹会马上消失，还是会继续走一会儿呢？</p>
       <p class="parent">风吹过海面时，空气和水面之间的摩擦会把能量传给水，先形成细小的毛细波；风持续吹，波浪吸收更多能量，波高和长度可能增加。波浪向前传播的主要是能量，不是整片海水一起向前流动；水分子多在原处做近似圆周的上下运动。风停后，波浪还会传播一段时间，直到被摩擦、破碎等消耗。你可以这样跟孩子说：风把能量送给海面，海面就像被轻轻推着，起了一圈圈波纹。</p>
     </details></li>
-<li><span class="day">第 10 天</span>
+<li class="day-item"><span class="dayb">10</span>
     <div class="q">海上工作的船都在做什么？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海上工作的船，就像海面上的小小“工作车队”。渔船出海，把鱼虾带回岸上；货船像大搬家车，装着粮食、衣服和玩具，送到很远的港口；客船带人去旅行。还有救援船，谁遇到危险就赶来帮忙；科学考察船会放下仪器，看看海水、鱼儿和海底。有的船还会给海上的风力发电机运送人和工具。风浪大时，船员要看海图、指南针和雷达，轮流开船。你觉得哪一种船最像你想坐的船呢？</p>
       <p class="parent">海上船舶分工很多：渔船捕捞水产，货船运输集装箱、散货或液体货物，客船运送乘客，拖船帮助大船靠离码头，工程船进行疏浚、铺设海底电缆等，救援船负责搜救，科考船则采集海水、沉积物和生物样本。船员依靠海图、雷达、卫星导航和气象信息航行；雷达能发现附近目标，但不能代替观察和判断。你可以这样跟孩子说：“不同的船有不同的工作，大家一起让海上的生活顺利进行。”</p>
     </details></li>
-<li><span class="day">第 11 天</span>
+<li class="day-item"><span class="dayb">11</span>
     <div class="q">海浪是一朵朵水在跑吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海浪看起来像一排排水在往前跑，其实不完全是。海面上的水，更多是在原地一上一下、前后一小圈地晃动，就像操场上大家传球：球没有跑到队伍最前面，可“传球的动作”一直向前传。风吹海面，把能量传给水，就形成了波浪。到了浅水边，海底变浅，水浪被挤得站起来，最后哗啦啦地倒下，水才真的往岸边跑来一部分。你觉得海浪更像传球，还是像一列小火车在跑呢？</p>
       <p class="parent">海浪是波动，不是许多整块海水一起向前移动。风把能量传给海面，水分子通常在自己的附近做上下、前后或近似圆周运动，波峰和波谷则把能量传播开。深水处水体前进很少；靠岸后水深变浅，波速减慢、波高变大，波峰失稳破碎，才有较明显的水流冲上沙滩。你可以这样跟孩子说：海浪是在传递动作，水大多只是在附近摇摆。</p>
     </details></li>
-<li><span class="day">第 12 天</span>
+<li class="day-item"><span class="dayb">12</span>
     <div class="q">鱼身上的鳞片有什么用？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你摸过鱼吗？鱼身上的鳞片，就像一片片叠起来的小屋瓦，也像给身体穿上的小盔甲。它们能挡住水里的小石头、树枝和一些小伤害，保护里面软软的皮肤。鳞片表面还有一层滑滑的黏液，像涂了肥皂，让鱼在水里游得更顺，也不容易让小小的病菌粘住。很多鳞片还会闪光或带颜色，能帮鱼躲进水草、沙地里，或者让同伴找到它。不过，并不是所有鱼都有我们看到的鳞片，有些鱼的皮肤很特别。你觉得鱼鳞更像盔甲、雨衣，还是屋顶的瓦片呢？</p>
       <p class="parent">鱼鳞是鱼皮肤的一部分，通常一片片重叠排列，形成保护层，能减少擦伤；表面的黏液还能降低游泳阻力，并帮助阻挡病原体，减少体内水分和盐分失衡。鳞片的颜色和反光也可能帮助伪装或传递信号。不同鱼类差异很大，鲨鱼是盾鳞，海马的身体则有骨板。你可以这样跟孩子说：“鱼鳞像小盔甲和滑滑的雨衣，能保护鱼，让它游得更顺！”</p>
     </details></li>
-<li><span class="day">第 13 天</span>
+<li class="day-item"><span class="dayb">13</span>
     <div class="q">蓝鲸为什么能长得比公交车还大？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象一下，一辆公交车大约十来米长，蓝鲸却能长到二十多米，肚子像一间小房子！它住在海里，海水像一双大手托住身体，让巨大的身子不会全靠骨头和腿来支撑。蓝鲸还有一张“超级大嘴”，游过一大片海水时，会把小小的磷虾和鱼群连水一起吞进来，再用鲸须把食物滤出来。海里食物够多，长大的身体还能游很远、储存能量，所以一代代蓝鲸越长越大。不过，蓝鲸宝宝出生时也不是小小一只哦，它已经很大了！你觉得它喝奶时，会不会像在喝一条小河？</p>
       <p class="parent">蓝鲸体长通常约20—30米，明显超过常见公交车。它能演化出如此巨大的体型，关键有三点：海水浮力减轻了承重限制；鲸须过滤磷虾等小型猎物，使它能高效获得大量能量；大体型有助于长途迁徙、储存脂肪，并减少成年后天敌威胁。它不是“吃一口就长大”，而是长期自然选择的结果。蓝鲸仍是地球上已知最大的动物。你可以这样跟孩子说：海水托着它，鲸须帮它吃饱，所以蓝鲸能慢慢长成海里的巨人。</p>
     </details></li>
-<li><span class="day">第 14 天</span>
+<li class="day-item"><span class="dayb">14</span>
     <div class="q">大风来了，海浪为什么会变得更高？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象海面是一张大大的蓝毯子。小风像手指轻轻碰它，只能拨出小皱纹；大风像一双有力的手，连续推着海面，风的力量一遍遍传给水，皱纹就会越滚越大，变成高高的海浪。海浪不是整片海水跑到岸边，而是水面一会儿抬起、一会儿落下，像蹦蹦床在起伏。风吹得越久、吹过的海面越宽，海浪通常越高、越长；不过到了很大时，也会受到海域和时间的限制。你觉得站在岸边时，海浪冲来像不像海洋在做大大的呼吸？</p>
       <p class="parent">风把能量传给海面，先形成小波纹；如果风持续吹，并且有足够长的海面可供它推动，波浪会不断吸收能量，波高和波长都可能增加。这里的“更高”不是海水整体被风吹走，而是水面上下起伏更明显。在较深的水里，水粒子大多在原地附近做近似圆周运动。实际浪高还受风速、持续时间、风区长度和水深影响，并非风越大就一定无限变高。你可以这样跟孩子说：“大风把能量一遍遍传给海面，小波纹就慢慢长成大海浪。”</p>
     </details></li>
-<li><span class="day">第 15 天</span>
+<li class="week"><b>第 3 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">15</span>
     <div class="q">灯塔为什么总是在海边亮着？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">因为大海不像马路，没有一条清清楚楚的线告诉船该往哪儿走。海边有礁石、浅滩和港口，天黑、下雨或下大雾时，船上的人很难看见它们。灯塔就像海边的一盏超级大夜灯，站在高高的地方，把光送得远远的，提醒船只：“这里有岸，那里可能有危险，港口在这边！”有些灯塔的光还会一闪一闪，像灯塔在用自己的“光密码”报名字。现在船有地图和导航帮忙，但灯塔仍像一位可靠的老朋友，在需要时指路。你觉得，如果海上没有灯塔，船会不会更容易迷路呢？</p>
       <p class="parent">灯塔是建在海岸、岛屿、礁石附近的航标建筑，主要用强光帮助船只辨认岸线、危险水域和港口。灯光通常在日落后开启，雾天等能见度很低时也可能配合雾号工作；不同灯塔常有不同的闪光节奏，方便船员识别位置。如今船舶有电子海图、GPS等设备，灯塔仍是重要的视觉和备用导航标志。你可以这样跟孩子说：“灯塔像海边的大手电筒，帮船找到安全的路。”</p>
     </details></li>
-<li><span class="day">第 16 天</span>
+<li class="day-item"><span class="dayb">16</span>
     <div class="q">为什么海水一会儿涨上来，一会儿退下去？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你有没有发现，海边的水有时跑到沙滩上，有时又退回海里？这叫潮涨潮落。月亮像一只看不见的大手，会用引力轻轻拉着地球上的海水。地球不停自转，海边转到被海水“鼓起”的地方，就像轮流来到水池边，看到涨潮；转开了，就像退潮。太阳也会帮忙拉水。很多海边一天大约涨两次、退两次，不过海岸的形状会让时间和高低不一样。你觉得月亮是在拉海水，还是在推海水呢？</p>
       <p class="parent">潮涨潮落主要是月球引力造成的。月球会把海水拉向自己，同时地月共同转动产生的惯性，使地球背向月球的一侧也形成一个“水隆起”。地球自转时，海岸轮流经过这些隆起，于是出现涨潮和退潮。太阳也有引潮力，虽然平均弱于月球；当日、月、地大致排成一线时，潮差通常较大。实际次数和高度还会受海岸形状、海底地形影响。你可以这样跟孩子说：月亮用引力拉海水，地球一转，海边就轮流遇到涨潮和退潮。</p>
     </details></li>
-<li><span class="day">第 17 天</span>
+<li class="day-item"><span class="dayb">17</span>
     <div class="q">为什么有些鱼会把自己藏得和石头一样？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海里有些鱼，身体灰灰的、凹凹凸凸，趴在海底时，看起来就像一块长满花纹的石头。它们把自己的颜色、身形，还有“一动不动”的本领都用上了：大鱼不容易发现它们，小虾小蟹也会从旁边经过。有时，它们还在等食物靠近，突然张嘴吸进去，像石头开了花。这种“变装”叫伪装，就像我们穿上和墙一样颜色的衣服，躲猫猫时更不容易被找到。不过，它们不是真石头，也不会一直不动。要是你来躲猫猫，你会选哪块“石头”呢？</p>
       <p class="parent">这是一种伪装，也叫保护色或隐蔽色。石头鱼、蝎子鱼等底栖鱼，常有斑驳颜色、粗糙皮肤和不规则轮廓；它们停在岩石或沙地上，能降低被天敌发现的机会。有些鱼也利用伪装伏击小鱼小虾。这样的特征经过长期自然选择保留下来，但伪装不是“隐身”，近距离、移动或环境改变时仍可能暴露。你可以这样跟孩子说：它们把自己打扮成海底石头，既能躲开危险，也能悄悄等食物。</p>
     </details></li>
-<li><span class="day">第 18 天</span>
+<li class="day-item"><span class="dayb">18</span>
     <div class="q">鲸鱼的尾巴为什么长在身体后面？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看，小船往前走时，船尾的螺旋桨会把水往后推，船就被推着往前。鲸鱼游泳也有点像这样：它用身体后面的尾巴，像一对横着的小翅膀，上下摆动，把海水往后、往下推，自己就向前游。头部要负责感知、吃东西和呼吸，身体前面还要先劈开海水。尾巴放在后面，既能当“发动机”，又不会挡住前面的路。你觉得鲸鱼摆尾巴时，身体会往哪个方向走呢？</p>
       <p class="parent">鲸鱼的尾部位于身体后端，是因为它的身体沿着前后方向形成了适合游泳的流线形。尾部肌肉带动尾鳍上下摆动，向后方推水，反作用力推动身体前进；尾鳍也能帮助控制上下方向。头部则集中着进食、感知和呼吸相关结构。这种布局不是鲸鱼自己选择的，而是长期演化保留下来的。你可以这样跟孩子说：鲸鱼用后面的尾巴推水，就像船尾的螺旋桨，水往后走，鲸鱼就往前游。</p>
     </details></li>
-<li><span class="day">第 19 天</span>
+<li class="day-item"><span class="dayb">19</span>
     <div class="q">海上的云和陆地上的云一样吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海上的云和陆地上的云，身体其实是用同一种“小水滴”或小冰晶做的，就像天空里飘着的白色小泡泡。海水不停蒸发，水汽升到高处，遇到冷空气，就会变成云。陆地上的河流、湖泊和植物也会送水汽上天。海面比较平，风常常把云推着走；陆地有山和树林，会让空气上升，所以云的形状和多少有时不一样。可光看样子，很难说它来自海上还是陆地。你觉得哪一朵云最像一只小动物？</p>
       <p class="parent">海上云和陆地云的基本成分相同，都是空气中的水汽冷却后，依附在微小尘埃或盐粒等“凝结核”上，形成的水滴或冰晶。差别主要来自环境：海面持续提供水汽，海风和海陆风会搬运空气；陆地受太阳加热、山地抬升和植物蒸腾影响，云的形成位置、厚薄和形状可能不同。不过，云会随风移动，不能只凭外观看出它来自海上还是陆地。你可以这样跟孩子说：“海上和陆地上的云，都是水汽变成的小水滴或小冰晶，只是它们在不同地方长大，样子有时会不一样。”</p>
     </details></li>
-<li><span class="day">第 20 天</span>
+<li class="day-item"><span class="dayb">20</span>
     <div class="q">船为什么能浮在水面上？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你有没有发现，空空的塑料盆放进水里会浮起来，可是一颗小石头却会沉下去？船也是这个道理。船虽然用钢铁做，身子却做得很大、里面还有许多空空的地方，像一个巨大的铁皮盆。它一压进水里，就把一大团水推到旁边；水也会用力往上托它。只要水向上的托力，能抵住船和货物向下的重量，船就稳稳浮着。船装得太满，或者破了进水，船就不再像大盆，托力变小，可能会下沉。你觉得，用橡皮泥做船，怎样才能让它浮起来呢？</p>
       <p class="parent">船能否浮起，关键不在材料是钢还是木，而在整体平均密度和排开水的体积。船体内部做成空的，使同样重量分布在更大的体积中。船下沉时会排开水，水产生向上的浮力；当浮力等于船和货物的总重时，船就停在水面。若继续装货，排水量增加；超过安全限度，船会下沉。你可以这样跟孩子说：船把水推开，水就把它向上托，只要托得住它的重量，船就能浮着。</p>
     </details></li>
-<li><span class="day">第 21 天</span>
+<li class="day-item"><span class="dayb">21</span>
     <div class="q">海底那么深，下面是不是黑漆漆的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">海水像一座特别高的楼房，海面是“第一层”，海底像很深很深的地下室。阳光能照进上面的海水，越往下光越少，到了大约两百米以下，已经很暗；再深一些，太阳光就几乎到不了，像关了灯一样。不过，海底的黑暗里也不是什么都没有：有些鱼、虾和水母会自己发光，像一闪一闪的小夜灯，帮助它们找伙伴、找食物，或者把敌人吓走。你觉得如果自己有一盏会发光的小灯，想在海底照出什么呢？</p>

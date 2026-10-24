@@ -8,17 +8,24 @@
 
 :root{--paper:#f7f2e9;--card:#fffdf8;--ink:#33302a;--sub:#7a7264;--accent:#8c5a3c;--moss:#5f7050;--line:#e4dbc8}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(140,90,60,.05) 1px,transparent 1.4px);background-size:20px 20px;color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 a{color:var(--accent)}
 
 .hero{max-width:760px;margin:0 auto;padding:64px 20px 24px;text-align:center}
 .brand{color:var(--accent);letter-spacing:.35em;font-size:13px;margin:0}
-h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 10px}
-.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:10px 0 4px}
+h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:38px;margin:14px 0 8px}
+.made-for{color:var(--sub);font-size:13.5px;letter-spacing:.08em;margin:0}
+.cover{width:min(340px,82%);border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(80,60,40,.16);margin:12px 0 4px}
 .welcome{color:var(--sub)}
 .chips span{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;margin:4px;font-size:13px;color:var(--moss)}
-nav{position:sticky;top:0;background:rgba(247,242,233,.93);backdrop-filter:blur(4px);text-align:center;padding:10px;border-bottom:1px solid var(--line);z-index:1}
-nav a{color:var(--ink);text-decoration:none;margin:0 9px;font-size:14px}
+nav{position:sticky;top:0;background:rgba(247,242,233,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+.nav-inner{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-brand{font-family:Georgia,"Songti SC",serif;font-weight:700;margin-right:14px;color:var(--accent);font-size:14.5px}
+nav a{color:var(--ink);text-decoration:none;margin:0 8px;font-size:14px;transition:color .15s}
+nav a:hover{color:var(--accent)}
+.nav-home{color:var(--accent)!important;font-weight:600}
+section{scroll-margin-top:64px}
 main{max-width:860px;margin:0 auto;padding:24px 20px}
 section{margin:48px 0}
 h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:6px}
@@ -29,35 +36,45 @@ h2{font-family:Georgia,"Songti SC",serif;font-size:26px;border-left:4px solid va
 .map p{margin:0 0 10px;color:var(--sub);font-size:13px}
 .areas span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:2px;font-size:12px;color:var(--sub)}
 ol.path{list-style:none;padding:0}
-.path li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
-.day{color:var(--accent);font-size:12px;letter-spacing:.15em}
+.path li.day-item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0;transition:box-shadow .15s,transform .15s}
+.path li.day-item:hover{box-shadow:0 6px 16px rgba(90,70,40,.12);transform:translateY(-2px)}
+.path .week{background:#f1ead9;border-radius:9px;padding:7px 14px;margin:18px 0 4px;font-size:13px;color:var(--sub);list-style:none}
+.path .week b{color:var(--accent);margin-right:9px;font-family:Georgia,"Songti SC",serif}
+.dayb{display:inline-flex;width:27px;height:27px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-size:12.5px;margin-right:9px;font-family:Georgia,serif;vertical-align:-8px}
 .q{font-weight:600}
 details{margin-top:8px}
-summary{cursor:pointer;color:var(--moss);font-size:14px}
+summary{cursor:pointer;color:var(--moss);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";font-size:15px;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
 .kid{background:#f1ead9;border-radius:8px;padding:10px 14px}
 .parent{color:#4c463c}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;transition:transform .15s,box-shadow .15s}
+.mini:hover{transform:translateY(-3px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
 .mini b{color:var(--accent)}
 .mini p{margin:8px 0 0;font-size:14px}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
-@media print{nav{display:none}}
+@media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
 </head>
 <body>
 <header class="hero">
   <p class="brand">杂学书房 · 定制</p>
   <h1>小满的宇宙书房</h1>
+  <p class="made-for">为 小满（6 岁）定制 · 宇宙主题</p>
   <img class="cover" src="cover.png" alt="书房封面插画">
   <p class="welcome">小满，欢迎来宇宙书房！从你最爱的星星、火箭和月亮出发，每天挑一个小问题，和家长一起读一读、聊一聊，再带着新发现看看天空。</p>
   <div class="chips"><span>每天一个问题，聊出宇宙好奇心</span><span>卡片剪开后，随抽随玩随讲</span><span>按兴趣选书，读懂比读完重要</span></div>
 </header>
-<nav>
+<nav><div class="nav-inner">
+  <span class="nav-brand">📚 小满的宇宙书房</span>
   <a href="#map">知识地图</a><a href="#path">21 天路径</a><a href="#cards">冷知识卡</a><a href="#book">书单</a><a href="#manual">家长手册</a>
-</nav>
+  <a class="nav-home" href="../index.html">服务主页 ↗</a>
+</div></nav>
 <main>
   <section id="map"><h2>知识地图</h2><p class="sub">这间书房一共 5 个展区。</p>
     <div class="map-grid"><div class="map"><h3>地球和月亮</h3><p>从脚下的地球望向身边的月亮</p>
@@ -72,127 +89,127 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
     <div class="areas"><span>火箭升空</span><span>人造卫星</span><span>太空生活</span><span>月球探险</span><span>深空探测</span></div></div></div>
   </section>
   <section id="path"><h2>21 天探索路径</h2><p class="sub">每天一个小问题，晚饭后 5 分钟；点开看讲稿，照着讲就行。</p>
-    <ol class="path"><li><span class="day">第 1 天</span>
+    <ol class="path"><li class="week"><b>第 1 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">1</span>
     <div class="q">我走到哪儿，月亮怎么好像都跟着我？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你有没有发现，坐车、散步，甚至换到院子另一边，月亮好像都在头顶附近？其实它没有真的跟着你跑。月亮离我们大约38万千米，远得像站在操场这头，看着很远的灯；你走几步，相比这段距离，位置变化小得几乎看不出来。反倒是路边的树、房子离你近，一走动，它们就赶快从眼前“跑”过去。月亮一直在天空中运动，只是它的变化很慢、很小，所以我们觉得它在陪着我们散步。你和月亮之间有一条线，觉得走多远，这条线才会明显改变呢？</p>
       <p class="parent">这是一种“视差”造成的错觉。月亮平均距离地球约38.4万千米；我们走过几米或几十米，观察位置改变的角度非常小，所以它在视野中的方向几乎不变。近处的树木、房屋相对移动角度大，才显得飞快掠过。月亮其实也在绕地球运行，地球还在自转，因此它会缓慢改变天空中的位置，只是不容易被短时间散步察觉。你可以这样跟孩子说：月亮太远了，我们走的这几步，对它来说几乎没有换位置。</p>
     </details></li>
-<li><span class="day">第 2 天</span>
+<li class="day-item"><span class="dayb">2</span>
     <div class="q">太阳看着像个小圆盘，真的比地球大很多吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">会呀！太阳其实是个超级大的“火球”，直径大约是地球的109倍。要是把地球想成一颗一厘米宽的小珠子，太阳就像一个直径约1.09米的大皮球，里面大约能装下130万个地球。可是太阳离我们太远了，平均约1.5亿千米，所以看起来才像天空中的小圆盘。它发出的光，走到地球也要八分多钟。我们看到的大小，不只看东西本身，还要看它离我们多远，就像远处的汽车看起来很小，走近才发现很大。你觉得，如果太阳离我们近一些，它看起来会像什么？</p>
       <p class="parent">太阳直径约为地球109倍，体积约130万倍，质量约33万倍。它与地球平均相距约1.496亿千米，所以本身巨大，视直径却只有约0.5°，看起来像小圆盘。判断天体看起来多大，要同时看真实大小和距离。太阳和月亮看起来大小相近，是因为太阳巨大而遥远，月亮较小却很近；这也是日全食能发生的原因之一。你可以这样跟孩子说：太阳大得不得了，只是离我们太远，所以看起来像个小圆盘。</p>
     </details></li>
-<li><span class="day">第 3 天</span>
+<li class="day-item"><span class="dayb">3</span>
     <div class="q">晚上的星星一闪一闪，是在眨眼睛吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你发现了吗？星星一闪一闪的样子，好像在天空中眨眼睛。其实，它们没有眼皮，也没有真的一开一合。星星离我们远得不得了，发出的光要穿过厚厚的空气才能到眼睛。空气一层一层地流动，像透明的水在轻轻晃动，星光就会一会儿亮、一会儿暗，看起来像在闪。月亮和一些行星常常没那么闪，因为它们看起来比星星“大”一些，空气的小晃动不容易把它们的光全变来变去。你觉得哪颗星最像在和你打招呼？</p>
       <p class="parent">“闪烁”主要是大气湍流造成的。恒星虽然很大，但距离极远，在天空中几乎只是一个光点；不同温度、密度的空气层不断流动，会让光线发生轻微折射，使进入眼睛的光强不断变化。行星距离相对近，能看到一个小小的圆面，各处光线的变化会互相抵消，所以通常不如恒星闪烁。你可以这样跟孩子说：星星不是在眨眼，是空气把它的光晃得一明一暗。</p>
     </details></li>
-<li><span class="day">第 4 天</span>
+<li class="day-item"><span class="dayb">4</span>
     <div class="q">坐飞机一直往上飞，就能飞进太空吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">不能哦！飞机虽然会往上飞，却不能一直往上。它的发动机要吸进空气里的氧气，翅膀也要靠空气托住飞机。飞得越高，空气越稀薄，飞机就越使不上劲。普通客机大约飞在10千米高处；人们常把离地约100千米的地方看作太空。火箭不一样，它带着燃料和帮助燃烧的东西，还要飞得特别快。你觉得飞机和火箭，谁更像能冲上太空的运动员？</p>
       <p class="parent">不能。飞机靠机翼在空气中产生升力，喷气发动机也要吸入空气中的氧气；越往高处空气越稀薄，升力和发动机推力都会受到限制。普通客机巡航高度约10千米，远低于通常以100千米高空作为界线的“卡门线”。火箭自带燃料和助燃剂，并能达到绕地飞行所需的巨大速度，所以才有机会进入太空。你可以这样跟孩子说：飞机需要周围的空气，火箭带着燃料和助燃剂去太空。</p>
     </details></li>
-<li><span class="day">第 5 天</span>
+<li class="day-item"><span class="dayb">5</span>
     <div class="q">火箭没有翅膀，怎么还能往天上飞？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你看，飞机要靠翅膀“托住”自己，在空气里滑翔；火箭走的是另一条路。火箭肚子里装着推进剂。点火后，推进剂变成又热又快的气体，从尾巴的喷口猛地向下冲，就像你坐在滑板车上用力蹬地，车子会向前跑一样。气体向下，火箭就受到一个向上的推力，越过大气层后，就算没有空气，它也能继续飞。火箭的翅膀不是必须的，有些火箭会装尾翼，主要是帮助它起飞时保持方向。你觉得火箭喷出的气体为什么要朝下呢？</p>
       <p class="parent">火箭升空靠的是“推力”，不是翅膀产生的升力。发动机把推进剂燃烧成高温、高压气体，再通过喷管高速向后喷出；按照牛顿第三定律，气体受到向后的作用力，火箭就受到大小相等、方向相反的向前推力。推力大于火箭重力时，它就能上升。进入太空后几乎没有空气，翅膀也帮不上忙，但发动机依然能把自身携带的推进剂喷出。你可以这样跟孩子说：火箭把气体向下喷，自己就被推向上。</p>
     </details></li>
-<li><span class="day">第 6 天</span>
+<li class="day-item"><span class="dayb">6</span>
     <div class="q">地球像个球，为什么我家门口的路看着是平的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你可以把地球想成一个特别特别大的球，而我们住在球面上。家门口这一小块地，就像大球上的一粒小芝麻。芝麻旁边的球面弯得很轻很轻，短短的马路看起来就像平直的纸条；其实它正贴着地球的弯曲表面。就像蚂蚁站在篮球上，脚边的一小步也会觉得平。只有走得很远、看得很开，或者站得很高，才更容易发现远处慢慢“往下弯”。大海上的船开远时，船身也会先藏起来，桅杆最后才消失。你觉得站在高楼上，还是站在地面上，更容易看出地球是圆的呢？</p>
       <p class="parent">地球近似球体，地面上的“水平”可理解为当地表的切线方向。地球半径约6371千米，所以在几米到几千米的生活尺度上，曲率很小，路面、操场和一小段平静水面都可近似看成平面。看得越远、站得越高，越可能发现地平线，以及远处物体被地球遮住的现象；不过人在地面上仍很难直接看见弧度。你可以这样跟孩子说：“因为地球太大，脚边的一小段弯曲看起来就是平的。”</p>
     </details></li>
-<li><span class="day">第 7 天</span>
+<li class="day-item"><span class="dayb">7</span>
     <div class="q">太阳没有插电，怎么能一直亮着、热着？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">太阳并不是插了电才发亮。它肚子里面有一种叫“氢”的小粒子，像一大群挤在一起的小积木。在太阳中心，压力大得不得了，温度也高得不得了，氢粒子会合在一起，变成另一种东西——氦。这个过程叫“核聚变”，会放出好多好多能量，就像一座巨大的超级火炉。能量一路跑到太阳表面，再变成光和热，照亮我们、温暖地球。太阳的燃料非常多，所以还能这样工作很多很多年。你觉得太阳像不像宇宙里的大火炉？</p>
       <p class="parent">太阳发光发热，不靠电，而靠核心的核聚变。太阳主要由氢和氦组成；核心温度约1500万摄氏度，巨大的引力把物质压得非常紧，让氢原子核结合成氦。聚变会把一小部分质量转成能量，能量以光和热的形式向外传递。太阳已经稳定“燃烧”约46亿年，预计还能持续约50亿年。你可以这样跟孩子说：太阳肚子里的氢在“牵手”，牵手时就放出光和热。</p>
     </details></li>
-<li><span class="day">第 8 天</span>
+<li class="week"><b>第 2 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">8</span>
     <div class="q">太阳也是星星，为什么它看着和夜里的星星不一样？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">太阳其实也是一颗星星，只是它离我们特别近，像一盏挂在家门口的大灯；夜空里的星星也会发光，可它们离我们太远了，远得像在很远很远地方的小灯点，所以看起来又小又亮。太阳离地球近，光线很快就照到我们眼睛里，看起来又大又圆，还会把白天照亮。到了晚上，地球转到背向太阳的一面，我们才看见远处的星星。你觉得如果把一盏小手电放得很远，它会看起来变大还是变小呢？</p>
       <p class="parent">太阳和夜空中看到的星星，本质上都是恒星，靠内部的核聚变产生能量和光。太阳距离地球约1.5亿千米，是离我们最近的恒星；其他恒星远得多，所以在天空中只呈现为小小的亮点。太阳看起来又大又亮，主要是因为距离近，不是因为它一定比所有星星都大。白天的天空很亮，会遮住大多数星光；夜里地球自转使我们背向太阳，星星才更明显。你可以这样跟孩子说：太阳也是星星，只是它住得离我们最近，所以看起来最大最亮。</p>
     </details></li>
-<li><span class="day">第 9 天</span>
+<li class="day-item"><span class="dayb">9</span>
     <div class="q">宇宙这么大，科学家用什么当尺子？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">宇宙大得像一张大到看不见边的地图，普通的米尺、公里尺，拿来量它，就像用铅笔量操场，太慢啦！科学家会换上“大单位”：地球到太阳的平均距离，叫“天文单位”，大约1.5亿千米；光一年跑过的距离，叫“一光年”，大约9.46万亿千米。它们还会用“光年”说星星离我们多远。记住，光年是距离，不是时间哦！如果一颗星离我们4光年，就表示它发出的光要走4年才到地球。你觉得，量月亮到地球，用公里，还是用光年更合适呢？</p>
       <p class="parent">“尺子”要随尺度更换。太阳系内常用天文单位（AU），1 AU指地球绕日轨道的平均距离，约1.496亿千米。恒星际和星系尺度常用光年：光在真空中一年走过的距离，约9.46万亿千米。更专业地，天文学还用秒差距，1秒差距约3.26光年。光年是长度单位，不是时间单位。你可以这样跟孩子说：宇宙太大，要用适合它大小的尺子。</p>
     </details></li>
-<li><span class="day">第 10 天</span>
+<li class="day-item"><span class="dayb">10</span>
     <div class="q">太空里没有空气给它推，火箭还能往前走吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">能！火箭不需要像飞机那样用空气托住翅膀。它肚子里带着燃料和帮助燃烧的氧化剂，点火后，燃料变成很热、很快的气体，从尾巴“轰”地向后喷出去。就像你坐在滑板车上，用力把一个大球往后推，自己会向前滑；火箭也是这样，气体向后，火箭就向前。太空虽然没有空气，但火箭带着自己的“氧气”，所以还能继续加速。你觉得如果气体喷得更快，火箭会怎样呢？</p>
       <p class="parent">火箭前进不是靠“推空气”，而是靠牛顿第三定律：发动机把燃烧产生的高温气体高速向后喷出，气体同时给火箭一个大小相等、方向相反的作用力。火箭还要自带燃料和氧化剂（如液氧），因为太空没有空气可供燃烧。只要发动机继续喷气，就能加速；关机后仍会因惯性飞行，但不再获得推力。你可以这样跟孩子说：“火箭把气体向后喷，自己就向前走！”</p>
     </details></li>
-<li><span class="day">第 11 天</span>
+<li class="day-item"><span class="dayb">11</span>
     <div class="q">地球一直在转，为什么我一点儿也不觉得晕？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">地球也像一辆超级大的车，正在转动。我们、房子、树，还有包住地球的空气，都一起转，所以彼此看起来没有在飞快移动。就像你坐在平稳行驶的车里，车不开窗、不急刹，你不会觉得自己在跑。只有车突然启动、转弯或停下，身体才容易感觉到变化。地球转得很平稳，不会忽快忽慢；而且重力像一只看不见的大手，把我们牢牢拉在地面上。其实赤道附近的人转得很快，每秒约465米，可大家都和地面一起走。你觉得什么情况下，坐车会突然觉得晕呢？</p>
       <p class="parent">地球自转一周约24小时。赤道上的地面速度约每秒465米，但我们、建筑物和大气都以几乎相同的速度运动，因此没有明显的相对运动。人的前庭系统主要感受速度的变化，如加速、减速和转弯，而不是稳定的速度。地球自转产生的向心加速度很小，在赤道约为重力的0.35%，不会把人甩出去。你可以这样跟孩子说：地球转得很稳，我们和空气一起转，所以感觉像坐在平稳的车里。</p>
     </details></li>
-<li><span class="day">第 12 天</span>
+<li class="day-item"><span class="dayb">12</span>
     <div class="q">科学家拍到的太阳黑子，是太阳上的小洞吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">不是哦！太阳黑子不是太阳被戳出来的小洞，也不会让东西掉进去。太阳表面像一大锅会翻滚的热汤，热气不断往上冒。太阳黑子附近的磁场特别强，像一只看不见的大手，挡住了一些热气，所以那里比周围凉一些。它其实还是热得不得了，只是和更亮、更热的地方一比，看起来像黑色的小斑点。黑子会慢慢变大、变小，还会消失；有些大黑子甚至比地球还宽呢！如果太阳是一张会变化的脸，黑子就像脸上的临时小雀斑。你觉得它是真黑，还是只是看起来黑呢？</p>
       <p class="parent">太阳黑子是太阳光球层中磁场很强的区域。强磁场会抑制热等离子体的对流，使内部能量到达表面的速度减慢，因此温度比周围低、亮度也低；但它仍有几千摄氏度，绝不是空洞。我们看到的“黑”，是和周围更亮的光球对比出来的。黑子会形成、演变并消散，较大的黑子还能比地球宽，并常和太阳耀斑等活动有关。你可以这样跟孩子说：黑子不是洞，而是太阳表面一块被强磁场影响、所以显得暗的地方。</p>
     </details></li>
-<li><span class="day">第 13 天</span>
+<li class="day-item"><span class="dayb">13</span>
     <div class="q">白天看不到星星，它们躲到哪里去了？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">其实，星星没有躲起来。白天它们还在天上，继续一闪一闪地发光。只是太阳太亮了，像一盏巨大无比的灯，把天空照得发亮；阳光还会跑进空气里，被空气中的小小颗粒散开，让整片天空变成蓝色。星星的光就像远处的小手电筒，虽然也照到我们眼睛里，却被明亮的天空“盖住”了。等太阳下山，天空变暗，星星的光就显出来啦。它们不是白天睡觉，也没有跑到月亮后面。你觉得，白天如果把天空变成黑色，我们会不会马上看到星星？</p>
       <p class="parent">星星白天并没有消失，它们发出的光仍在穿过太空到达地球。阳光进入地球大气层后，会被空气分子向各个方向散射，其中蓝光更容易散射，所以天空变得明亮而偏蓝。星光相对太微弱，和明亮天空的反差太小，人眼就很难分辨。夜晚没有阳光照亮这一侧的大气，背景变暗，星光才显现出来。你可以这样跟孩子说：“星星一直在天上，只是白天的天空太亮，把它们的光盖住了。”</p>
     </details></li>
-<li><span class="day">第 14 天</span>
+<li class="day-item"><span class="dayb">14</span>
     <div class="q">光年听起来像时间，为什么能用来量距离？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象你在操场上推一辆会发光的小车。它跑得特别特别快，1秒钟就能绕地球好几圈。科学家想知道它跑得有多远，就说：“让它一直跑满一年，跑过的路，就是1光年。”所以，光年里的“年”是在告诉我们光跑了多久，不是说它是时间；“光年”真正量的是距离。宇宙太大了，星星之间远得像从家门口一直到看不见的天边，用“多少光年”比写一大串千米更方便。要是星星离我们4光年，我们今天看到的光，其实是它4年前出发的。你觉得，光年是在量时间，还是在量距离呢？</p>
       <p class="parent">光年是长度单位，不是时间单位。它的定义是：光在真空中传播一年的距离。光速每秒约30万千米，因此1光年约等于9.46万亿千米。宇宙中的恒星、星系相距极远，用千米书写会有很长的数字，所以天文学家用光年来表达距离。若一颗恒星距我们约4光年，我们今天看到的光，就是它约4年前发出的。你可以这样跟孩子说：光年不是光活了多久，而是光跑一年走了多远。</p>
     </details></li>
-<li><span class="day">第 15 天</span>
+<li class="week"><b>第 3 周</b>每天一个小问题，随时可暂停、可回看</li><li class="day-item"><span class="dayb">15</span>
     <div class="q">火箭升空时，底下怎么会冒出那么大一团白云？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">火箭点火时，发动机把燃料和氧化剂烧得特别猛烈，喷出又热又快的气体。里面有些水蒸气，像烧水时看不见的“水汽”。它一冲到外面，遇到较冷的空气，就变成许许多多小水滴或小冰晶，聚在一起，看起来像一大团白云。发射台附近有时还会喷水，帮助降温、减小声音和震动，所以云会更大。它不是火箭在冒烟，而是水汽和水滴在“现身”。你觉得这朵云像不像一条刚出锅的蒸汽长龙？</p>
       <p class="parent">火箭尾焰不是普通烟雾。燃料与氧化剂反应后，排气中可能含有大量水蒸气；高温气体离开喷口后迅速膨胀、降温，水蒸气凝结成微小水滴或冻结成冰晶，于是呈白色云团。不同推进剂产生的成分不同，并非每枚火箭都会同样“白”。许多发射场还会向台面喷水，用来吸收声波和热量，形成额外蒸汽。你可以这样跟孩子说：“那不是烟，是热气遇冷变成的小水滴和冰晶，发射台的水也帮它变成了大白云！”</p>
     </details></li>
-<li><span class="day">第 16 天</span>
+<li class="day-item"><span class="dayb">16</span>
     <div class="q">我们这里天黑了，地球另一边的小朋友正在吃早饭吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">有可能哦！地球像一只不停转动的大球，太阳像一盏大灯，只能照亮半个地球。太阳照到的一面是白天，背着太阳的一面就是黑夜。我们这里天黑时，地球另一边可能正被阳光照着，所以那里的小朋友也许刚起床、吃早饭；不过“另一边”很大，有的地方可能已经是中午或下午了。地球转一圈大约要24小时，就像一场不停歇的“白天黑夜接力赛”。你觉得我们睡觉时，哪里的小朋友可能正在上学呢？</p>
       <p class="parent">地球不停自转，约24小时转一圈；被太阳照亮的一面是白天，背向太阳的一面是黑夜。地球大约一半同时处在白天，另一半处在黑夜。若两地相差约12个时区，时间大约相差12小时，所以我们夜里时，对方可能是清晨，但也可能已是上午或下午，不能只凭“另一边”判断早餐。时区边界和季节也会让情况不同。你可以这样跟孩子说：“我们这里的夜晚，可能正好是地球另一处的早晨，但要看它在哪个时区。”</p>
     </details></li>
-<li><span class="day">第 17 天</span>
+<li class="day-item"><span class="dayb">17</span>
     <div class="q">太阳系里的八颗行星，谁排在最里面，谁排在最外面？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">想象太阳是一盏巨大的灯，八颗行星像小朋友，沿着不同的跑道绕它转圈。离太阳最近的是水星，它是“最里面的小跑手”；接着是金星、地球和火星；再往外，是木星、土星、天王星，最后到海王星，它就是八颗行星里最外面的一颗。水星离太阳近，绕一圈只要八十八天左右；海王星可远啦，绕太阳一圈要花一百六十多年。这就像我们排队：水星站最前，海王星站最后。你猜，地球在这支队伍的第几个呢？</p>
       <p class="parent">八颗行星按距离太阳由近到远排列是：水星、金星、地球、火星、木星、土星、天王星、海王星。因此，水星位于最内侧，海王星位于最外侧。这里的“里面、外面”指它们绕太阳运行轨道的远近，并不是排成一条直线。冥王星曾被列为第九颗行星，2006年起归为矮行星，所以现在通常说太阳系有八颗行星。你可以这样跟孩子说：水星离太阳最近，海王星离太阳最远，中间还有六位邻居。</p>
     </details></li>
-<li><span class="day">第 18 天</span>
+<li class="day-item"><span class="dayb">18</span>
     <div class="q">为什么有的星星偏红，有的却蓝白蓝白的？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">你有没有发现，炉火有时红红的，火焰最里面却会发蓝？星星也有点像这样。星星其实是一个个非常非常热的“火球”，它们发出的光混在一起，我们看到的颜色，就像它的“温度小名片”：温度低一些的，常常偏红、橙；热得更厉害的，常常蓝白、白色。太阳看起来黄白，其实也很热。夜空里的星星离我们太远，不能用手摸，只能靠颜色猜它有多热。颜色不是在说星星的心情，也不是它真的涂了颜料。你觉得，蓝白色和红色的星星，谁的“火力”更大呢？</p>
       <p class="parent">星光的颜色主要由恒星表面温度决定，原理和烧热物体发光相似：温度较低时，光谱中红光更显眼；温度升高，颜色会趋向白色、蓝白色。红色恒星表面常约3000—4000℃，蓝白色恒星可超过10000℃。这里说的是表面温度，不是整颗星的温度；恒星内部还要热得多。你可以这样跟孩子说：星星的颜色像温度标签，蓝白色通常比红色更热。</p>
     </details></li>
-<li><span class="day">第 19 天</span>
+<li class="day-item"><span class="dayb">19</span>
     <div class="q">太阳发出的光，要跑多久才能照到我的脸上？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">太阳离我们非常远。太阳发出的光，就像一群看不见的小信使，朝着地球飞来。它们的速度快得惊人：一秒钟能绕地球跑七圈多！可是，太阳到地球的路实在太长，光还是要跑大约八分二十秒，才会落到你的脸上。所以，你脸上现在暖暖的阳光，其实是太阳八分二十秒以前发出的。要是太阳突然关灯，我们也不会马上发现，要等这么久才看见变化——当然，太阳不会突然关灯啦！如果今天有云，阳光还会被云挡住。你觉得这群小信使，是先照到你的脸，还是先照到窗户呢？</p>
       <p class="parent">太阳到地球的平均距离约1.496亿千米，真空中的光速约每秒29.98万千米，因此光从太阳表面到地球平均需499秒，也就是8分19秒多，通常说8分20秒。太阳光到达地球后，还要穿过大气层；晴天时，直射光可以照到脸上，云层、建筑物或夜晚则会挡住它。我们看到的太阳，永远是约8分20秒前的样子。你可以这样跟孩子说：“阳光是坐着最快的光速列车，从太阳出发约八分二十秒才到你的脸上。”</p>
     </details></li>
-<li><span class="day">第 20 天</span>
+<li class="day-item"><span class="dayb">20</span>
     <div class="q">火箭为什么飞着飞着，就把一节身体分开了？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">火箭像一辆要跑很远很远的“接力车”，身上套着好几节圆筒。刚起飞时，最下面的一节装满燃料，负责使劲往上推；燃料用完后，这一节和发动机就完成任务了。如果还背着它们，火箭就像背着空水桶爬楼梯，太沉，会浪费力气。于是，火箭会在高空把这一节分开，有的按计划落向大海，有的在大气层里烧毁，剩下的轻一点的部分继续加速。后面的几节也会这样接力。你觉得，为什么不把空水桶一直背到太空呢？</p>
       <p class="parent">这叫“级间分离”，是多级火箭的重要设计。火箭需要把燃料、发动机和结构一起加速；燃料烧完后，空罐和已用尽的发动机会成为“死重”，继续带着它们会消耗更多燃料、降低速度。因此火箭按阶段点火，某一级完成工作后，由分离螺栓、弹簧等装置脱开，再点燃上面的一级。分离后的部件可能坠入海中、在大气层烧蚀，或按设计回收，并不是每枚火箭都一样。你可以这样跟孩子说：火箭把完成任务的空壳放下，才能轻装接力，飞得更远。</p>
     </details></li>
-<li><span class="day">第 21 天</span>
+<li class="day-item"><span class="dayb">21</span>
     <div class="q">太阳每天都从东边出来，是它绕着我们跑吗？</div>
     <details><summary>展开今天的讲稿</summary>
       <p class="kid">其实，不是太阳每天绕着我们跑，而是地球这颗大大的“球”在转呀！想象你坐在会慢慢转动的旋转木马上：旁边的房子没有跑，可你转到不同方向时，它们看起来就像从眼前经过。地球也像一只不停转的球，我们住在球面上。地球自西向东转，所以我们先转到太阳这一面，看见太阳从东边升起；转到背向太阳的一面，就到了夜晚。太阳当然也在宇宙中运动，只是一天的东升西落，主要是地球自转造成的。你觉得现在我们是在地球的白天面，还是夜晚面呢？</p>
