@@ -60,6 +60,12 @@ details[open] summary::after{transform:rotate(45deg)}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
+.grad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.grad-card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px;text-decoration:none;color:var(--ink);display:block;transition:transform .15s,box-shadow .15s}
+.grad-card:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
+.grad-card .gico{font-size:20px}
+.grad-card b{display:block;margin:4px 0 3px}
+.grad-card p{margin:0;font-size:13px;color:var(--sub)}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
 @media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
@@ -279,6 +285,13 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
   </section>
   <section id="letter"><h2>给家长的一封信</h2>
     <p class="parent">亲爱的家长：欢迎来到“小满的恐龙书房”。这是一间从孩子兴趣出发，把阅读、提问、观察和游戏放在一起的主题书房。五件套可以这样用：先看主题导览，和孩子认识本次要探索的恐龙；每天选一个小问题，吃饭或睡前聊几分钟，不必急着找标准答案；把知识卡片打印、剪开，玩配对、分类、猜谜，也可带出门观察；书单按孩子的年龄、兴趣和阅读难度挑两三本，图鉴与故事交替；最后用亲子小任务画一只恐龙、做脚印或讲一次发现，让知识落到手上。愿这间小书房陪你们把“为什么”变成一段段快乐的亲子时光，也允许每一次探索都慢一点。</p>
+  </section>
+  <section id="grad"><h2>第 21 天之后</h2><p class="sub">21 天走完，这间展区就毕业了——典礼在这里，新书架也从这里长出来。</p>
+    <div class="grad-grid">
+      <a class="grad-card" href="certificate.html" target="_blank"><span class="gico">🎓</span><b>打印毕业证书</b><p>给 小满 的仪式感：打印、签名、贴一只手画的 恐龙。</p></a>
+      <div class="grad-card"><span class="gico">🧭</span><b>书架延伸</b><p>恐龙聊透了？下一批小主人常去的展区：<b>化石考古 / 地球与火山 / 鲸鱼与海洋</b>。</p></div>
+      <a class="grad-card" href="../index.html#order"><span class="gico">➕</span><b>添下一个展区</b><p>孩子新的着迷点就是新书架：48 小时交付，早鸟 ¥29。</p></a>
+    </div>
   </section>
 </main>
 <footer>

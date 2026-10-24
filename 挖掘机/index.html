@@ -60,6 +60,12 @@ details[open] summary::after{transform:rotate(45deg)}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
+.grad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.grad-card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px;text-decoration:none;color:var(--ink);display:block;transition:transform .15s,box-shadow .15s}
+.grad-card:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
+.grad-card .gico{font-size:20px}
+.grad-card b{display:block;margin:4px 0 3px}
+.grad-card p{margin:0;font-size:13px;color:var(--sub)}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
 @media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
@@ -279,6 +285,13 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
   </section>
   <section id="letter"><h2>给家长的一封信</h2>
     <p class="parent">亲爱的家长，欢迎来到朵朵的挖掘机书房。这是一间从孩子兴趣出发，把阅读、观察和动手连接起来的小空间。五件套可以这样用：先看主题导览，和孩子认识挖掘机的用途与部件；每天抽一个小问题聊一聊，不必急着给标准答案；把知识卡片打印、剪开，玩配对、分类或猜谜；按书单挑选，优先符合6岁理解力、图文清楚且能引发提问的书，再搭配故事书与科普书；最后完成亲子小任务，如观察工地或画一台挖掘机。愿这间书房让每一次“为什么”，都变成一起发现世界的时光。</p>
+  </section>
+  <section id="grad"><h2>第 21 天之后</h2><p class="sub">21 天走完，这间展区就毕业了——典礼在这里，新书架也从这里长出来。</p>
+    <div class="grad-grid">
+      <a class="grad-card" href="certificate.html" target="_blank"><span class="gico">🎓</span><b>打印毕业证书</b><p>给 朵朵 的仪式感：打印、签名、贴一只手画的 挖掘机。</p></a>
+      <div class="grad-card"><span class="gico">🧭</span><b>书架延伸</b><p>挖掘机聊透了？下一批小主人常去的展区：<b>工程车家族 / 桥梁与建筑 / 火车与车站</b>。</p></div>
+      <a class="grad-card" href="../index.html#order"><span class="gico">➕</span><b>添下一个展区</b><p>孩子新的着迷点就是新书架：48 小时交付，早鸟 ¥29。</p></a>
+    </div>
   </section>
 </main>
 <footer>

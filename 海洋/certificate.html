@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>小满的探索毕业证书</title>
+<style>
+@page{size:A5 landscape;margin:8mm}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Songti SC","SimSun",serif;background:#f1ead9;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.frame{width:170mm;height:112mm;background:#fffef9;border:3px double #8c5a3c;border-radius:6px;padding:14mm 12mm;text-align:center;position:relative;box-shadow:0 10px 30px rgba(80,60,40,.25)}
+.frame::after{content:"";position:absolute;inset:4mm;border:1px solid #d8c9a8;border-radius:3px;pointer-events:none}
+.Emj{font-size:30px}
+small{letter-spacing:.4em;color:#a8821f;font-size:11px;display:block;margin:6px 0 2px}
+h1{font-size:27px;margin:6px 0 10px;color:#6e4630}
+.who{font-size:19px;margin:8px 0 2px}
+.body{font-size:13.5px;line-height:2;color:#4c463c;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.seal{margin-top:10mm;display:flex;justify-content:space-between;align-items:flex-end;padding:0 6mm}
+.seal .l{text-align:left;font-size:11px;color:#7a7264;font-family:-apple-system,sans-serif;line-height:1.9}
+.seal .r{text-align:right;font-family:Georgia,"Songti SC",serif;color:#8c5a3c;font-size:13px}
+.sign{margin-top:6mm;font-size:11.5px;color:#7a7264;font-family:-apple-system,sans-serif}
+.printbar{position:fixed;top:10px;left:0;right:0;text-align:center;font:13px -apple-system,sans-serif;color:#7a7264}
+.printbar button{border:1px solid #8c5a3c;background:#fffef9;border-radius:999px;padding:5px 16px;cursor:pointer;color:#8c5a3c;font:inherit}
+@media print{.printbar{display:none}body{background:#fff}.frame{box-shadow:none;margin:0 auto}}
+</style>
+</head>
+<body>
+<div class="printbar"><button onclick="window.print()">🖨️ 打印这张证书（A5 横向）</button></div>
+<div class="frame">
+  <div class="Emj">🎓</div>
+  <small>杂学书房 · 探索毕业证书</small>
+  <h1>毕业证书</h1>
+  <div class="who">小满 小朋友</div>
+  <p class="body">已坚持完成「海洋」展区 21 天探索<br>提出过好问题，也找到了属于自己的答案<br>特发此证，以资鼓励</p>
+  <div class="seal">
+    <div class="l">书房名称：小满的海洋书房<br>完成日期：______ 年 ____ 月 ____ 日</div>
+    <div class="r">杂学书房 · 海洋展区<br>—— 颁 ——</div>
+  </div>
+  <p class="sign">家长签名：______________　　（贴照片/画一只海洋都可以）</p>
+</div>
+</body>
+</html>

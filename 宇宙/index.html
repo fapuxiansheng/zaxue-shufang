@@ -60,6 +60,12 @@ details[open] summary::after{transform:rotate(45deg)}
 ul.books{padding-left:20px}
 ul.books li{margin:8px 0}
 ul.books span{color:var(--sub);font-size:14px}
+.grad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.grad-card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px;text-decoration:none;color:var(--ink);display:block;transition:transform .15s,box-shadow .15s}
+.grad-card:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(90,70,40,.13)}
+.grad-card .gico{font-size:20px}
+.grad-card b{display:block;margin:4px 0 3px}
+.grad-card p{margin:0;font-size:13px;color:var(--sub)}
 footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-align:center;color:var(--sub);font-size:14px}
 @media print{nav{display:none}body{background:#fff;background-image:none}}
 </style>
@@ -279,6 +285,13 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:32px 20px;text-a
   </section>
   <section id="letter"><h2>给家长的一封信</h2>
     <p class="parent">亲爱的家长，欢迎来到“小满的宇宙书房”。这是一份为6岁孩子准备的家庭阅读小宇宙：用故事认识星星，用问题点亮好奇心，也给亲子聊天留出慢慢想的时间。五件套可以这样用：先读主题导读，和孩子建立背景；每天抽一个小问题，不急着找标准答案；把知识卡片打印、剪开，随手抽取，配合讲述或分类游戏；书单按孩子当下的兴趣和阅读难度挑一两本，不必一次读完；最后用探索任务，把阅读带到窗边、纸笔和夜空里。愿你们不必急着教会孩子宇宙，只需陪他一起抬头、发问、惊叹。</p>
+  </section>
+  <section id="grad"><h2>第 21 天之后</h2><p class="sub">21 天走完，这间展区就毕业了——典礼在这里，新书架也从这里长出来。</p>
+    <div class="grad-grid">
+      <a class="grad-card" href="certificate.html" target="_blank"><span class="gico">🎓</span><b>打印毕业证书</b><p>给 小满 的仪式感：打印、签名、贴一只手画的 宇宙。</p></a>
+      <div class="grad-card"><span class="gico">🧭</span><b>书架延伸</b><p>宇宙聊透了？下一批小主人常去的展区：<b>航空与火箭 / 天气与气象 / 月球与潮汐</b>。</p></div>
+      <a class="grad-card" href="../index.html#order"><span class="gico">➕</span><b>添下一个展区</b><p>孩子新的着迷点就是新书架：48 小时交付，早鸟 ¥29。</p></a>
+    </div>
   </section>
 </main>
 <footer>
