@@ -70,7 +70,8 @@ h2{font-size:22px;border-left:4px solid var(--accent);padding-left:11px;margin-b
 .morelink:hover{border-color:var(--accent);transform:translateY(-2px)}
 .morelink b{font-size:13px;color:var(--accent)}
 .morelink span{font-size:11.5px;color:var(--sub);text-align:right}
-/* ── 价格 ── */
+.demo.featured{border-color:var(--accent);box-shadow:0 6px 18px rgba(140,90,60,.13);background:linear-gradient(180deg,#fffef6,var(--card))}
+.demo.featured b{font-size:15px}
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
 @media(max-width:700px){.price-grid{grid-template-columns:1fr}}
 .price{background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:17px 15px;text-align:center;transition:transform .15s,box-shadow .15s}
@@ -114,8 +115,8 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:24px 20px;text-a
   <div class="hero-grid">
     <div>
       <p class="brand">数字时代的杂学书房</p>
-      <h1>把孩子着迷的话题，<br>变成一间 48 小时交付的书房</h1>
-      <p class="lead">给 3–12 岁孩子的知识定制：你提交孩子天天追问的话题，48 小时内收到一间专属线上书房——每天一个小问题，家长照着就能讲。</p>
+      <h1>给孩子一间<b>会长大的</b>书房：<br>每订一个主题，添一个新展区</h1>
+      <p class="lead">你提交孩子天天追问的话题，48 小时内做成一个展区添进 TA 的专属书房——每天一个小问题，家长照着就能讲。展区越攒越多，书房越住越满。</p>
       <div class="cta">
         <a class="btn" href="#order">立即下单 ¥29 起</a>
         <a class="btn ghost" href="#demo">先逛样例书房</a>
@@ -137,7 +138,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:24px 20px;text-a
 <main>
 
 <section id="what">
-  <h2>一间书房，五件套</h2>
+  <h2>添一个展区，交付五件套</h2>
   <p class="sub">全部围绕你孩子的年龄和兴趣定制，不是通用课程。晚饭桌上接得住提问，睡前当故事彩蛋，周末按地图逛博物馆。</p>
   <div class="grid5">
     <div class="item5"><span class="ico">🗺️</span><b>知识地图</b><p>话题全貌导图，先看清再探索</p></div>
@@ -161,10 +162,13 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:24px 20px;text-a
   <h2>样例书房架</h2>
   <p class="sub">先逛后买，样例即真实交付水准。</p>
   <div class="shelf-row">
-    <a class="demo" href="恐龙/index.html"><img class="dthumb" src="恐龙/thumb.jpg" alt="恐龙书房封面" loading="lazy"><span class="dbody"><b>恐龙书房（5 岁）→</b><p>5 展区 · 21 天路径 · 30 卡 · 20 题手册 · 5 本真实书单。</p></span></a>
-    <a class="demo" href="宇宙/index.html"><img class="dthumb" src="宇宙/thumb.jpg" alt="宇宙书房封面" loading="lazy"><span class="dbody"><b>宇宙书房（6 岁）→</b><p>从"月亮为什么跟着我"讲到宇宙尺度。</p></span></a>
-    <a class="demo" href="海洋/index.html"><img class="dthumb" src="海洋/thumb.jpg" alt="海洋书房封面" loading="lazy"><span class="dbody"><b>海洋书房（5 岁）→</b><p>鲸鱼、水母、深海——从海洋馆到整片蓝色世界。</p></span></a>
-    <a class="demo" href="挖掘机/index.html"><img class="dthumb" src="挖掘机/thumb.jpg" alt="挖掘机书房封面" loading="lazy"><span class="dbody"><b>挖掘机书房（6 岁）→</b><p>真实订单样例：液压、履带与工程思维。</p></span></a>
+    <a class="demo featured" href="书房/小满/index.html"><span class="dbody"><b>📚 小满的书房 · 总览 →</b><p>一间会长大的书房：现有 3 个展区（恐龙 / 宇宙 / 海洋）· 63 天探索路径 · 90 张冷知识卡 · 15 本核验书单。</p></span></a>
+  </div>
+  <div class="shelf-row" style="margin-top:12px">
+    <a class="demo" href="恐龙/index.html"><img class="dthumb" src="恐龙/thumb.jpg" alt="恐龙展区封面" loading="lazy"><span class="dbody"><b>恐龙展区（5 岁）→</b><p>5 个书架 · 21 天路径 · 30 张冷知识卡 · 20 题家长手册 · 5 本真实书单。</p></span></a>
+    <a class="demo" href="宇宙/index.html"><img class="dthumb" src="宇宙/thumb.jpg" alt="宇宙展区封面" loading="lazy"><span class="dbody"><b>宇宙展区（6 岁）→</b><p>从"月亮为什么跟着我"讲到宇宙尺度。</p></span></a>
+    <a class="demo" href="海洋/index.html"><img class="dthumb" src="海洋/thumb.jpg" alt="海洋展区封面" loading="lazy"><span class="dbody"><b>海洋展区（5 岁）→</b><p>鲸鱼、水母、深海——从海洋馆到整片蓝色世界。</p></span></a>
+    <a class="demo" href="挖掘机/index.html"><img class="dthumb" src="挖掘机/thumb.jpg" alt="挖掘机展区封面" loading="lazy"><span class="dbody"><b>挖掘机展区（6 岁）→</b><p>真实订单样例：液压、履带与工程思维。</p></span></a>
   </div>
   <div class="morerow">
     <a class="morelink" href="mini-挖掘机.html"><b>⚡ 迷你书房（70 秒快照）</b><span>下单前的即时体验</span></a>
@@ -178,8 +182,8 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:24px 20px;text-a
   <h2>价格</h2>
   <p class="sub">交付前可全额退款；交付后 7 天内发现事实错误，免费修正。</p>
   <div class="price-grid">
-    <div class="price hot"><span class="tag">早鸟价</span><h3>单间书房</h3><div class="num">¥29 <small>原价 ¥49</small></div><p>五件套全交付，48 小时内</p></div>
-    <div class="price"><span class="tag">即将开放</span><h3>家庭年卡</h3><div class="num">¥199 <small>/ 年</small></div><p>每月一间书房 + 每周卡片推送</p></div>
+    <div class="price hot"><span class="tag">早鸟价</span><h3>添一个展区</h3><div class="num">¥29 <small>原价 ¥49</small></div><p>五件套全交付，48 小时内添进书房</p></div>
+    <div class="price"><span class="tag">即将开放</span><h3>家庭年卡</h3><div class="num">¥199 <small>/ 年</small></div><p>每月自动添一个新展区，书房越住越满</p></div>
     <div class="price"><span class="tag">二期</span><h3>博主素材订阅</h3><div class="num">¥29 <small>/ 月</small></div><p>知识类自媒体的选题与素材库</p></div>
   </div>
 </section>
